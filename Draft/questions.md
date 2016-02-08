@@ -26,7 +26,7 @@ Emily Marshall, Jay Miller, Akash Ray, Bijan Varjavand
 - What is the best classification of groups of inhibitory and excitatory neurons?
 - Is there a regression model that can predict the output of f, the density function, given input x, y, z? 
 
-#Casual
+#Causal
 - How does density of synapses influence the network of pathways?
 
 #Mechanistic
