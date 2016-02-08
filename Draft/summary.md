@@ -8,11 +8,7 @@ The ever-increasing resolution of datasets  allows for more refined understandin
 Algorithms to find relationships between the 3D distributions of synapses may be able to generate novel conclusions.
 
 ##Significance
-Utilizing novel algorithms may allow us to generate more complete models of how neuronal circuits process information. 
-By understanding the 3D distribution of synapses, it will allow a better understanding of the underlying neural circuitry, which will aid in better treatments. 
-While there are current methods for determining the placement of deep brain stimulation electrodes, this would help in better determining the best location to target and wider implications of how it may disrupt a network[5]. 
-This research may also prove helpful in gaining a larger picture view of the brain, as current methods look at microscopic circuitry, limiting the understanding of the wider range of networks our minds operate in[6][7]. 
-By understanding the distribution of the synapses, it may help with tying structure to function[6]. 
+Utilizing novel algorithms may allow us to generate more complete models of how neuronal circuits process information. Modeling synapse distributions in three dimensions may improve upon current methods for determining deep brain stimulation electrode location. Current synapse models are limited to miniscule regions of the brain, whereas our proposal may lead to a better understanding of local circuits in the cerebral cortex[6][7]. Combined with additional research into the functionality of the cerebral cortex, our findings may reveal novel relationships between synapse distribution and neural function.
 
 ##Feasibility
 Algorithms to generate signal pathways have already been implemented, which utilize well-established tools for tracking synapses[2]. 
