@@ -9,7 +9,11 @@ runs very slowly
 from mpl_toolkits.mplot3d import axes3d
 import matplotlib.pyplot as plt
 import numpy as np
-import sklearn.cluster as cluster
+
+
+filter_less_than_avg = True # filter out data points where
+# number of synapses is less than avg
+samples = 1000 # how many random samples?
 
 
 def check_condition(row):
@@ -24,31 +28,27 @@ def synapse_filt(row, avg):
     return False
 
 csv = np.genfromtxt('output.csv', delimiter=",")[1:]
-samples = 5000
 
-# only look at data points where the number of synapses is greater than avg
 a = np.apply_along_axis(check_condition, 1, csv)
 a = np.where(a == True)[0]
 nonzero_rows = csv[a, :]
+avg_synapse = np.mean(nonzero_rows[:, -1])
 xyz_only = nonzero_rows[:, [0, 1, 2]]
+print xyz_only.shape
 
-n_clusters = 4
-kmeans_algo = cluster.KMeans(n_clusters=n_clusters)
-clusters = kmeans_algo.fit_predict(xyz_only)
+if filter_less_than_avg:
+    filter_avg_synapse = np.apply_along_axis(synapse_filt, 1,
+                                             nonzero_rows, avg_synapse)
+    a = np.where(filter_avg_synapse == True)[0]
+    nonzero_filtered = nonzero_rows[a, :]
+    xyz_only = nonzero_filtered[:, [0, 1, 2]]
+    print xyz_only.shape
 
-
-"""avg_synapse = np.mean(nonzero_rows[1:, -1])
-print avg_synapse
-filter_avg_synapse = np.apply_along_axis(synapse_filt, 1,
-                                         nonzero_rows, avg_synapse)
-a = np.where(filter_avg_synapse == True)[0]
-nonzero_filtered = nonzero_rows[a, :]
-xyz_only = nonzero_filtered[:, [0, 1, 2]]"""
 
 # randomly sample
 perm = np.random.permutation(xrange(1, len(xyz_only[:])))
 xyz_only = xyz_only[perm[:samples]]
-clusters = clusters[perm[:samples]]
+
 
 # get range for graphing
 x_min = np.amin(xyz_only[:, 0])
@@ -73,11 +73,11 @@ ax.set_ylim(y_min, y_max)
 ax.set_zlim(z_min, z_max)
 
 ax.view_init()
-ax.dist = 12  # distance
+ax.dist = 10  # distance
 
 ax.scatter(
            xyz_only[:, 0], xyz_only[:, 1], xyz_only[:, 2],  # data
-           c=clusters,  # marker colour
+           c='blue',  # marker colour
            marker='o',  # marker shape
            s=30  # marker size
 )
