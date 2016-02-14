@@ -11,7 +11,7 @@ Emily Marshall, Jay Miller, Akash Ray, Bijan Varjavand
 - What is the unmasking variable?
 - How clustered are the groups of synapses?
 - How are the inhibitory and excitatory classes differentiated?
-  *New questions*
+- *New questions*
 - What does a representative slice of our data look like?
 
 #Exploratory
@@ -20,7 +20,7 @@ Emily Marshall, Jay Miller, Akash Ray, Bijan Varjavand
 - What is the mean of the probability mass function? What is the covariance?
 - What is the set of all possible (x, y, z)?
 - Where does the maximum number of synapses occur?
-  *New questions*
+- *New questions*
 - How do other clustering algorithms compare to our current k-means clustering representation of the synapse density data?
 - What do we consider outliers? What do they represent? How are we going to handle outliers?
 - What is the set of (x, y, z) removing outliers? How does removing outliers change our current statistical results regarding the synapse density.
