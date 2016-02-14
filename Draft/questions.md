@@ -2,14 +2,14 @@
 Emily Marshall, Jay Miller, Akash Ray, Bijan Varjavand
 
 - Our dataset consists of N feature vectors
+- > ans
 - The first 3 features of each vector represent x, y, and z coordinates
 - The 4th feature is called ‘unmasked’--at the moment, we do not know what this feature represents
 - The 5th feature represents the number of synapses at the position defined by features 1-3
 - There is a probability density function f: R^3→[0, 1] where f(x, y, z)=probability that a synapse exists at (x, y, z)
 
 #Descriptive
-- *What is the unmasking variable?*
-  > ans
+- What is the unmasking variable?
 - How clustered are the groups of synapses?
 - How are the inhibitory and excitatory classes differentiated?
 
