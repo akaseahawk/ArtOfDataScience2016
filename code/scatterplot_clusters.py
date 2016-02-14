@@ -32,7 +32,7 @@ a = np.where(a == True)[0]
 nonzero_rows = csv[a, :]
 avg_synapse = np.mean(nonzero_rows[:, -1])
 xyz_only = nonzero_rows[:, [0, 1, 2]]
-print xyz_only.shape
+
 
 if filter_less_than_avg:
     filter_avg_synapse = np.apply_along_axis(synapse_filt, 1,
@@ -40,11 +40,12 @@ if filter_less_than_avg:
     a = np.where(filter_avg_synapse == True)[0]
     nonzero_filtered = nonzero_rows[a, :]
     xyz_only = nonzero_filtered[:, [0, 1, 2]]
-    print xyz_only.shape
+
 
 kmeans_algo = cluster.KMeans(n_clusters=n_clusters)
 clusters = kmeans_algo.fit_predict(xyz_only)
-
+centers = kmeans_algo.cluster_centers_
+print centers
 
 # randomly sample
 perm = np.random.permutation(xrange(1, len(xyz_only[:])))
@@ -61,6 +62,8 @@ z_max = np.amax(xyz_only[:, 2])
 
 # following code adopted from
 # https://www.getdatajoy.com/examples/python-plots/3d-scatter-plot
+
+# plot data colored by clusters
 fig = plt.figure()
 ax = fig.gca(projection='3d')
 
@@ -79,6 +82,31 @@ ax.dist = 12  # distance
 ax.scatter(
            xyz_only[:, 0], xyz_only[:, 1], xyz_only[:, 2],  # data
            c=clusters,  # marker colour
+           marker='o',  # marker shape
+           s=30  # marker size
+)
+
+# plot cluster centers
+plt.show()  # render the plot
+
+fig = plt.figure()
+ax = fig.gca(projection='3d')
+
+ax.set_title('3D Scatter Plot')
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.set_zlabel('z')
+
+ax.set_xlim(x_min, x_max)
+ax.set_ylim(y_min, y_max)
+ax.set_zlim(z_min, z_max)
+
+ax.view_init()
+ax.dist = 12  # distance
+
+ax.scatter(
+           centers[:, 0], centers[:, 1], centers[:, 2],  # data
+           c='blue',  # marker colour
            marker='o',  # marker shape
            s=30  # marker size
 )
