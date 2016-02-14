@@ -9,13 +9,12 @@ Emily Marshall, Jay Miller, Akash Ray, Bijan Varjavand
 
 ##Descriptive
 - What is the unmasking variable?
-  > ans
 - How clustered are the groups of synapses?
 - How are the inhibitory and excitatory classes differentiated?
-- *New questions*
+- ###New questions
 - What does a representative slice of our data look like?
 
-#Exploratory
+##Exploratory
 - How can the data be clustered? (which metrics should be used for clustering)?
 - Where are the centers of such clusters?
 - What is the mean of the probability mass function? What is the covariance?
@@ -29,7 +28,7 @@ Emily Marshall, Jay Miller, Akash Ray, Bijan Varjavand
 - What is the correlation between synapse number and the unmasked value?
   
 
-#Inferential
+##Inferential
 - Is the clustering location of any significance in relation to other interneuronal groups?
 
 #Predictive
