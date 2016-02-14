@@ -2,6 +2,7 @@
 Emily Marshall, Jay Miller, Akash Ray, Bijan Varjavand
 
 - Our dataset consists of N feature vectors
+ >ans
 - The first 3 features of each vector represent x, y, and z coordinates
 - The 4th feature is called ‘unmasked’--at the moment, we do not know what this feature represents
 - The 5th feature represents the number of synapses at the position defined by features 1-3
