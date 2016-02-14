@@ -25,6 +25,7 @@ Emily Marshall, Jay Miller, Akash Ray, Bijan Varjavand
 - What do we consider outliers? What do they represent? How are we going to handle outliers?
 - What is the set of (x, y, z) removing outliers? How does removing outliers change our current statistical results regarding the synapse density.
 - What is the statistical significance of our PMF model?
+- What is the correlation between synapse number and the unmasked value?
   
 
 #Inferential
