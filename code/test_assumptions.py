@@ -32,7 +32,7 @@ for i in range (1, sample_size):
 csv_rand = np.mean(csv_rand,axis=2)
 
 
-#Independent Graph Assumption
+#Independence Assumption
 covar = np.cov(csv_rand_sample)
 
 plt.figure(figsize=(7,7))
