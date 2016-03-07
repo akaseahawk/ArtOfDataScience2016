@@ -1,0 +1,6 @@
+- *Assignment 1*: Draft/summary.md
+- *Assignment 2*: Draft/questions.md, Draft/new+revised_questions.md
+- *Assignment 3*: code/descriptive_exploratory_answers.ipynb
+- *Assignment 4*: code/inferential_simulation.ipynb
+- *Assignment 5*: code/regression_simulation.ipynb
+- *Assignment 6*: code/test_assumptions.ipynb
