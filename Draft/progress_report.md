@@ -46,16 +46,7 @@ We also asked about the values of mean and covariance of the probability mass fu
 To gain a better understanding of the limits of our dataset, we asked about the bounds of our (x,y,z) coordinates and the maximum number of synapses that occur at any one coordinate.
 
 #### Inferential Analysis
-We now seek to understand class conditional differences within our datasets. The covariate we are 
-seeking to separate graphs based upon is sex. Firstly we must pick a feature of our graphs to test 
-this difference under. As we'd looked at this feature in our exploratory analysis, we chose to use 
-edge density as our feature. Running a wilcoxon test on this population, in which 22 subjects were 
-male and 20 subjects were female, we found the following mean probabilities of edge based on class.
 
-We found that the difference between these populations was statistically significant with an alpha 
-value of 0.05, produciing a p value of 0.022768743719. Since we found a statistically significant 
-difference between classes, we can naturally proceed to trying to classify subjects based on their 
-edge density.
 
 #### Predictive Analysis
 Now that a relationship between synapses and the unmasked value has been observed, we can attempt to solidify
