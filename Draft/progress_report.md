@@ -35,29 +35,35 @@ We began by seeking some basic understanding of this data. To understand the str
 |Total Synapses|7704178| 
 |Invalid data points|6595|
 
-<img src="../figs for progress report/histogram.png" data-canonical-src="../figs for progress report/histogram.png" width="300" height="300" />
+<img src="../figs for progress report/histogram.png" data-canonical-src="../figs for progress report/histogram.png" width="400" height="300" />
 
 Another descriptive question asked regarded the meaning of the unmasked variable. After consulting with those familiar with the dataset who have an understanding of how the data was collected, we were able to gain an understanding of the meaning of the variable. The unmaksed value was a way to differentiate between boundary regions and those regions missing data from good-quality regions of data when the data was acquired. The mask represents regions which are to be ignored and are not meaningful data. More specifically, the unmasked value represents the number of voxels in that row which have meaningful data. Naturally, we suspected a relationship between the unmasked value and number of synapses at a given coordinate, and as such, tested for the correlation between the two. The correlation  between the unmasked value and number of synapses at a coordinate is 0.89621769. 
 
 The final descriptive question asked regarded clustering of the data. We suspected a natural clustering of synapses to be present, and
 thus we produced a scatter plot of the data to get a general idea of how the synapses are clustered and the structure as a whole.
 
-<img src="../figs for progress report/scatter.png" data-canonical-src="../figs for progress report/scatter.png" width="300" height="300" />
+<img src="../figs for progress report/scatter.png" data-canonical-src="../figs for progress report/scatter.png" width="400" height="300" />
 
 
 #### Exploratory Analysis
-Knowing what the unmasked value is, we could remove invalid data entries where unmasked values were zero. With the remaining data, we sought to gain a general understanding of how the synapses are structured in the sample. 
-Thus we asked how the data could be clustered and which metrics should be used to cluster the synapses. 
-We used k-means, varying k-values. In terms of which metrics to be using, since we're dealing with objects in 3D space, Euclidean distance is the obvious choice.
-These results are tabulated below. 
+Knowing what the unmasked value is, we could remove invalid data entries where unmasked values were zero. With the remaining data, we sought to gain a general understanding of how the synapses are structured in the sample. Thus we asked how the data could be clustered and which metrics should be used to cluster the synapses. We used k-means, varying k-values. In terms of which metrics to be using, since we're dealing with objects in 3D space, Euclidean distance is the obvious choice. These results are displayed below. 
 
-results of clustering
+<img src="../figs for progress report/kmeans_cluster.png" data-canonical-src="../figs for progress report/kmeans_clusters.png" width="400" height="300" />
+<img src="../figs for progress report/kmeans_centers.png" data-canonical-src="../figs for progress report/kmeans_centers.png" width="400" height="300" />
 
 what we notice
 
-We also asked about the values of mean and covariance of the probability mass function (f: R^3→[0, 1] where f(x, y, z)=probability that a synapse exists at (x, y, z)). The results are listed below.
+We also asked about the values of mean of the probability mass function (f: R^3→[0, 1] where f(x, y, z)=probability that a synapse exists at (x, y, z)). The mean is 1.61875161875e-05.
 
-To gain a better understanding of the limits of our dataset, we asked about the bounds of our (x,y,z) coordinates and the maximum number of synapses that occur at any one coordinate.
+To gain a better understanding of the limits of our dataset, we asked about the bounds of our (x,y,z) coordinates and the maximum number of synapses that occur at any one coordinate. The results are tabulated below.
+
+|Query| Syn Density Dataset|
+|-----|--------------------|
+|Min/Max x-value|1369/3358|
+|Min/Max y-value|55/1165|
+|Min/Max z-value|0/165789|
+|Max number of synapses at one point|33450|
+|Point at which max number of synpases occurs|(2749.0, 1876.0, 1054.0)|
 
 #### Inferential Analysis
 
