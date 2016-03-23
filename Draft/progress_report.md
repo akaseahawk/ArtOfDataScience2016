@@ -30,7 +30,7 @@ The natural first step when working with any data is to ask exploratory and desc
 We began by seeking some basic understanding of this data. To understand the structure of our data, we first asked questions regarding charachteristics of the data such as dataset size and shape, number of total synapses, and number of invalid (i.e. unmasked value = 0) data points were present in our data, what a histogram of the synapse density looks like. Below are the results of these questions. 
 
 |Query|Syn Density Dataset|
-|-------|
+|-------|-----------------|
 |Dataset Size/Shape|(61776, 5)|
 |Total Synapses|7704178| 
 |Invalid data points|6595|
@@ -42,6 +42,7 @@ Another descriptive question asked regarded the meaning of the unmasked variable
 The final descriptive question asked regarded clustering of the data. We suspected a natural clustering of synapses to be present, and
 thus we produced a scatter plot of the data to get a general idea of how the synapses are clustered and the structure as a whole.
 
+<img src="../figs/scatter.png" data-canonical-src="../figs/scatter.png" width="300" height="300" />
 
 
 #### Exploratory Analysis
