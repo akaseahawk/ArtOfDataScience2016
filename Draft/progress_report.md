@@ -51,7 +51,9 @@ Knowing what the unmasked value is, we could remove invalid data entries where u
 <img src="../figs for progress report/kmeans_cluster.png" data-canonical-src="../figs for progress report/kmeans_clusters.png" width="400" height="300" />
 <img src="../figs for progress report/kmeans_centers.png" data-canonical-src="../figs for progress report/kmeans_centers.png" width="400" height="300" />
 
-what we notice
+We ran k-means clustering with 4, 5, and 10 clusters and found that 4 clusters looked the most well organized and naturally structured
+out of those options. Our main goal in running the k-means clustering algorithm at this point was to see if there is any sense of 
+natural clustering in the data and whether or not it was visible and apparent. Later, we return to clustering where we find the optimal number of clusters of synapses for the dataset.
 
 We also asked about the values of mean of the probability mass function (f: R^3→[0, 1] where f(x, y, z)=probability that a synapse exists at (x, y, z)). The mean is 1.61875161875e-05.
 
@@ -90,5 +92,6 @@ high dimensionality of our data. Distances become less representative of the dat
 dimensionaltiy. Next, we plan to investigate why the polynomial regression and random forest regression performed relatively well and review our 
 assumptions for accuracy and completeness as well as adjust our regression algorithm parameters
 to better represent the true data as well as the adjusted assumptions. To gain more understanding of why
-the regression algorithms performed the way they did, we reevaluated our procedure thus far and tested our assumptions.
+the regression algorithms performed the way they did, we reevaluated our procedure thus far and tested our assumptions. 
+This is explained further in the Testing Assumptions and Next Steps sections.
 
