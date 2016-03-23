@@ -35,14 +35,14 @@ We began by seeking some basic understanding of this data. To understand the str
 |Total Synapses|7704178| 
 |Invalid data points|6595|
 
-<img src="../figs/histogram.png" data-canonical-src="../figs/histogram.png" width="300" height="300" />
+<img src="../figs for progress report/histogram.png" data-canonical-src="../figs for progress report/histogram.png" width="300" height="300" />
 
 Another descriptive question asked regarded the meaning of the unmasked variable. After consulting with those familiar with the dataset who have an understanding of how the data was collected, we were able to gain an understanding of the meaning of the variable. The unmaksed value was a way to differentiate between boundary regions and those regions missing data from good-quality regions of data when the data was acquired. The mask represents regions which are to be ignored and are not meaningful data. More specifically, the unmasked value represents the number of voxels in that row which have meaningful data. Naturally, we suspected a relationship between the unmasked value and number of synapses at a given coordinate, and as such, tested for the correlation between the two. The correlation  between the unmasked value and number of synapses at a coordinate is 0.89621769. 
 
 The final descriptive question asked regarded clustering of the data. We suspected a natural clustering of synapses to be present, and
 thus we produced a scatter plot of the data to get a general idea of how the synapses are clustered and the structure as a whole.
 
-<img src="../figs/scatter.png" data-canonical-src="../figs/scatter.png" width="300" height="300" />
+<img src="../figs for progress report/scatter.png" data-canonical-src="../figs for progress report/scatter.png" width="300" height="300" />
 
 
 #### Exploratory Analysis
