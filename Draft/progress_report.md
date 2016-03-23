@@ -18,18 +18,31 @@
 ----------
 
 ### Overview
-Mental illness causes huge financial social burdens for those affected by it. Gaining an understanding of brain function brings the research community one step closer to understadning this plague on humanity. Brain structure is a good indicator of how the brain behaves. Understanding the structure of the brain may help us model functionality of brain feautres as function of synapse density. We have been analyzing the structure of the brain through synaptic density maps with the goal of understanging the connection between brain structure and brain function.
+Mental illness causes huge financial social burdens for those affected by it. Gaining an understanding of brain function brings the research community one step closer to combating this plague on humanity. Brain structure is a good indicator of how the brain behaves. Understanding the structure of the brain may help us model functionality of brain feautres as function of synapse density. We have been analyzing the structure of the brain through synaptic density maps with the goal of understanging the connection between brain structure and brain function.
 
 ### Scientific Questioning
 Reword so we're not plagiarizing...
-We will discuss our analysis of this data, starting with exploratory and descriptive analysis, up to preliminary work on hypothesis testing and regression. The questions posed and their outcomes are described sequentially, with code and methods used to answer them described at the end of this report.
+We will discuss our analysis of the synapse density data, starting with exploratory and descriptive analysis, through hypothesis testing and regression. The questions posed and their outcomes are described sequentially, with code and methods used to answer them described at the end of this report.
 
 #### Descriptive Analysis
-The natural first step when working with any data is to ask exploratory and descriptive questions about it. We have been working with the _____ dataset. The dataset consists of (x,y,z) coordinates, the number of synapses at that point and the unmasked value for that region. We began by seeking some basic understanding of this data. To understand the structure of our data, we first asked questions regarding charachteristics of the data such as dataset size, number of total synapses, and number of invalid (i.e. unmasked value = 0) data points were present in our data, what a histogram of the synapse density looks like. Below are the results of these questions. Another descriptive question asked regarded the meaning of the unmasked variable. After consulting with those familiar with the dataset who have an understanding of how the data was collected, we were able to gain an understanding of the meaning of the variable. The unmaksed value was a way to differentiate between boundary regions and those regions missing data from good-quality regions of data when the data was acquired. The mask represents regions which are to be ignored and are not meaningful data. More specifically, the unmasked value represents the number of voxels in that row which have meaningful data. Naturally, we suspected a relationship between the unmasked value and number of synapses at a given coordinate, and as such, tested for the correlation between the two. The correlation  between the unmasked value and number of synapses at a coordinate is 0.89621769. The final descriptive question asked regarded clustering of the data. We suspected a natural clustering of synapses to be present.
+The natural first step when working with any data is to ask exploratory and descriptive questions about it. We have been working with the Kasthuri (2015) synapse densityi dataset (http://neurodata.io/Kasthurietal2014). The dataset consists of (x,y,z) coordinates, the number of synapses at that point and the unmasked value for that region. 
 
-| put answers here|
+We began by seeking some basic understanding of this data. To understand the structure of our data, we first asked questions regarding charachteristics of the data such as dataset size and shape, number of total synapses, and number of invalid (i.e. unmasked value = 0) data points were present in our data, what a histogram of the synapse density looks like. Below are the results of these questions. 
+
+|Query|Syn Density Dataset|
 |-------|
-|      | 
+|Dataset Size/Shape|(61776, 5)|
+|Total Synapses|7704178| 
+|Invalid data points|6595|
+
+<img src="../figs/histogram.png" data-canonical-src="../figs/histogram.png" width="300" height="300" />
+
+Another descriptive question asked regarded the meaning of the unmasked variable. After consulting with those familiar with the dataset who have an understanding of how the data was collected, we were able to gain an understanding of the meaning of the variable. The unmaksed value was a way to differentiate between boundary regions and those regions missing data from good-quality regions of data when the data was acquired. The mask represents regions which are to be ignored and are not meaningful data. More specifically, the unmasked value represents the number of voxels in that row which have meaningful data. Naturally, we suspected a relationship between the unmasked value and number of synapses at a given coordinate, and as such, tested for the correlation between the two. The correlation  between the unmasked value and number of synapses at a coordinate is 0.89621769. 
+
+The final descriptive question asked regarded clustering of the data. We suspected a natural clustering of synapses to be present, and
+thus we produced a scatter plot of the data to get a general idea of how the synapses are clustered and the structure as a whole.
+
+
 
 #### Exploratory Analysis
 Knowing what the unmasked value is, we could remove invalid data entries where unmasked values were zero. With the remaining data, we sought to gain a general understanding of how the synapses are structured in the sample. 
