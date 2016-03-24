@@ -21,7 +21,6 @@
 Mental illness causes huge financial social burdens for those affected by it. Gaining an understanding of brain function brings the research community one step closer to combating this plague on humanity. Brain structure is a good indicator of how the brain behaves. Understanding the structure of the brain may help us model functionality of brain feautres as function of synapse density. We have been analyzing the structure of the brain through synaptic density maps with the goal of understanging the connection between brain structure and brain function.
 
 ### Scientific Questioning
-Reword so we're not plagiarizing...
 We will discuss our analysis of the synapse density data, starting with exploratory and descriptive analysis, through hypothesis testing and regression. The questions posed and their outcomes are described sequentially, with code and methods used to answer them described at the end of this report.
 
 #### Descriptive Analysis
