@@ -68,11 +68,16 @@ To gain a better understanding of the limits of our dataset, we asked about the 
 |Point at which max number of synpases occurs|(2749.0, 1876.0, 1054.0)|
 
 #### Inferential Analysis
+We now try to learn about the distribution of synapses through statistical inference. We chose to examine the distribution by looking at 'slices' of data across specific z-values. There were 11 such z-slices. Our data model was that the synapse density per slice follows a multinomial distribution. The null hypothesis was that the distribution was uniform across each slice (that is, each 'bin' of the multinomial distribution has equal probability). The alternative was that the distribution was not uniform (i.e. each bin does not have the same probability). We ran a chi-squared test to determine whether or not to reject the null. The values for each bin and then the p-value are as follows:
 
+- [ 4.985  4.611  4.755  5.437  5.779  5.449  5.241  6.158  5.035  5.097 4.816]
+- p-value: 0.999997409328
+
+So we found that we cannot infact reject the null hypothesis. Looking at values for each bin, we can see that they are actually fairly uniform.
 
 #### Predictive Analysis
 Now that a relationship between synapses and the unmasked value has been observed, we can attempt to solidify
-the relationship between synapses and the unmasked value. Several types of regressions were trained and tested using LOO cross-validation, 
+the relationship between synapses and the unmasked value. Several types of regressions were trained and tested using 10-fold cross-validation, 
 and their results are tabulated below.
 
 | Regression | Accuracy | Standard Deviation |
@@ -95,6 +100,8 @@ to better represent the true data as well as the adjusted assumptions. To gain m
 the regression algorithms performed the way they did, we reevaluated our procedure thus far and tested our assumptions. 
 This is explained further in the Testing Assumptions and Next Steps sections.
 
+#### Testing Assumptions
+
 ### Methods
 
 Code and mathematical theory for all questions is provided in detail for each analysis in the following notebooks.
@@ -112,6 +119,8 @@ Code and mathematical theory for all questions is provided in detail for each an
 #### Exploratory Analysis 
 
 #### Inferential Analysis 
+
+
 
 #### Predictive Analysis 
 
