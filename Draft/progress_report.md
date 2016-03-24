@@ -97,6 +97,7 @@ This is explained further in the Testing Assumptions and Next Steps sections.
 
 ### Methods
 
+Code and mathematical theory for all questions is provided in detail for each analysis in the following notebooks.
 | Question Type | Code |
 |---------------|------|
 | Descriptive | [**``../code/descriptive_and_exploratory_answers.ipynb``**](../code/descriptive_and_exploratory_answers.ipynb) |
