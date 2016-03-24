@@ -115,7 +115,7 @@ Now we will investigate the independence assumption. To do this we can look at t
 
 Here we see that the covariance was highly concentrated along the diagonal, indicating that the data was infact independently distributed.
 
-#### What's Next
+#### Next Steps
 
 One thing that we have found is that the distribution of synapses across each z-slice is fairly uniform. However, we do not know anything about the spatial distribution within each of these z-slices. Therefore an interesting next step would be to examine the distribution of synapses along the xy-plane for each z-slice, and contrast and compare them across the set of all 11 slices. 
 
