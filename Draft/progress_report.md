@@ -107,13 +107,19 @@ First we will look at the identical assumption. As mentioned previously, in our 
 
 <img src="../figs for progress report/clusters_bic.png" data-canonical-src="../figs for progress report/clusters_bic.png" width="400" height="400" />
 
-We noticed an elbow at 4 clusters, so we concluded that this was the optimal number of clusters. Thus we concluded that our assumption of identical distributions was false.
+We noticed an elbow at 4 clusters, so we concluded that this was the optimal number of clusters. Thus we concluded that our assumption of identical distributions was false. Also note the spike at 11 clusters: we hypothesize that this is due to the fact that there are 11 possible z-values.
 
 Now we will investigate the independence assumption. To do this we can look at the sample-covariance matrix of our data. Since our data set was so big, doing this for all the data at once is infeasible. Instead we randomly sample from the data many times, taking the sample covariance for each of these random samples. Then we finally average these covariance matrices (element-wise).
 
 <img src="../figs for progress report/covariance_matrix.png" data-canonical-src="../figs for progress report/covariance_matrix.png" width="400" height="400" />
 
 Here we see that the covariance was highly concentrated along the diagonal, indicating that the data was infact independently distributed.
+
+#### What's Next
+
+One thing that we have found is that the distribution of synapses across each z-slice is fairly uniform. However, we do not know anything about the spatial distribution within each of these z-slices. Therefore an interesting next step would be to examine the distribution of synapses along the xy-plane for each z-slice, and contrast and compare them across the set of all 11 slices. 
+
+Another important next step is to interpret our regression results. While we did find that certain regression algorithms gave fairly good results, we don't know much about how the spatial positioning affected this, since there was obviously a strong relation between unmasked and synapses. Therefore we would like to run more regressions that don't involve this strong relationship, for example we would like to see if we can predict synapse density (synapses/unmasked) given x, y, z, another interesting relationship to examine would be the relationship betweeen position and unmasked (ignoring synapses), as this would give interesting information on the distribution of brain matter and also shed light on results about density.
 
 ### Methods
 
