@@ -101,6 +101,19 @@ the regression algorithms performed the way they did, we reevaluated our procedu
 This is explained further in the Testing Assumptions and Next Steps sections.
 
 #### Testing Assumptions
+The prior analyses all made the assumptions that our data was i.i.d (identically and independently distributed). Here we test whether or not such assumptions were actually true.
+
+First we will look at the identical assumption. As mentioned previously, in our exploratory analyses, we did notice some clustering, so it was likely that the data was infact not identically distributed. We more formally investigate this now. We did GMM clustering on the data, and plotted the BIC against the number of clusters.
+
+<img src="../figs for progress report/clusters_bic.png" data-canonical-src="../figs for progress report/clusters_bic.png" width="400" height="400" />
+
+We noticed an elbow at 4 clusters, so we concluded that this was the optimal number of clusters. Thus we concluded that our assumption of identical distributions was false.
+
+Now we will investigate the independence assumption. To do this we can look at the sample-covariance matrix of our data. Since our data set was so big, doing this for all the data at once is infeasible. Instead we randomly sample from the data many times, taking the sample covariance for each of these random samples. Then we finally average these covariance matrices (element-wise).
+
+<img src="../figs for progress report/covariance_matrix.png" data-canonical-src="../figs for progress report/covariance_matrix.png" width="400" height="400" />
+
+Here we see that the covariance was highly concentrated along the diagonal, indicating that the data was infact independently distributed.
 
 ### Methods
 
