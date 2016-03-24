@@ -135,12 +135,30 @@ Code and mathematical theory for all questions is provided in detail for each an
 
 #### Descriptive Analysis
 
+Here we were looking for numbers and figures that summarize our dataset well. We looked at total number of synapses, made a histogram of synaptic density, calculated correlation between unmasked and synapses, and made a 3D-scatterplot of the data, in order to gain some intuitive sense of how our data looks in Euclidean space. We could have additionally done these computations accross each z-slice, instead of just for the entire data set, as this might have given us some value information on how the data varies across slices.
+
 #### Exploratory Analysis 
+
+One thing we investigated here was how the data was clustered. We ran the k-means algorithm for several different values of k and then plotted the data, coloring it based on clusters. This gave us some intuitive sense of how the data could/should be clustered, although we did not examine what the optimal number of clusters might've been (although we did do this later). We also looked at the min and max values for the positions, and also where the maximum number of synapses occured. Another interesting thing that we could have done was to look at where this maximum number occurs for each z-slice and then we could see how this position changes across z-slices.
 
 #### Inferential Analysis 
 
+Here we examined spatial distribution of synaptic density for each z-slice. That is, we looked at the total sum of synapses/unmasked for each distinct z-value. We determined using a chi-squared test, that the synapses may be uniformly distributed (that is we failed to reject our null hypothesis that they were uniform). We used a chi-squared test, primarily due to previous familiarity. To prove that the power converges to 1 given sufficient samples under the alternate, we generated similar data to the alternate and then plotted the power increasing.
 
+<img src="../figs for progress report/power.png" data-canonical-src="../figs for progress report/power.png" width="400" height="400" />
+
+Alternatively, we could have looked at the distribution across the entire data set, instead of per slice, but this would be infeasible using a chi-squared test. We could also have investigated further by doing another slicing across say the x-axis, for each of our z-slices, and then checking whether the distribution for the x-slices was uniform. 
 
 #### Predictive Analysis 
 
+Here we ran a regression that tried to predict unmasked given x, y, z, synapses. Unfortunately we realized in retrospect that this was not the most interesting regression to do, given the strong relationship between synapses and unmasked. Our initial train of thought was that it would've been interesting to see how synapses affects the amount of brain region (this is how we were interpreting unmasked). 
+
+We ran Linear Regression, Support Vector Regression (SVR), K-Nearest Neighbor Regression (KNN), Random Forest Regression, and Polynomial Regression, all just with default sklearn parameters. In the future we should tune these parameters to best fit our data. To show that these regressions should infact be fairly effective on our data, we ran them on simulated data similar to ours, and then plotted the coefficient of determination (we used 10-fold cross-validation to determine the std-dev). 
+
+<img src="../figs for progress report/regression.png"  width="400" height="200" />
+
 #### Testing Assumptions
+
+To test independence, we looked at the sample covariance matrix. This means we were just looking at linear independence. So while we said that by looking at the sample covariance matrix, we were concluding that the data was independent, we actually are only determining that it is not linearly independent. That being said, lack of linear independence is still a strong indicator of an overall lack of independence.
+
+To test identical distributions, we ran a GMM for different numbers of clusters and then plotted the BIC (Bayesian Information Criterion) for each. We looked for an elbow in the plot of BIC against # of clusters to determine the optimal one. This turned out to be 4. Interestingly, there is also a high spike at 11 clusters, but we attribute this to the fact that there are 11 z-slices. 
