@@ -127,10 +127,10 @@ Code and mathematical theory for all questions is provided in detail for each an
 
 | Question Type | Code |
 |---------------|------|
-| Descriptive | [**``../code/descriptive_and_exploratory_answers.ipynb``**](../code/descriptive_and_exploratory_answers.ipynb) |
-| Exploratory | [**``../code/descriptive_and_exploratory_answers.ipynb``**](../code/descriptive_and_exploratory_answers.ipynb) |
+| Descriptive | [**``../code/descriptive_exploratory_answers.ipynb``**](../code/descriptive_exploratory_answers.ipynb) |
+| Exploratory | [**``../code/descriptive_exploratory_answers.ipynb``**](../code/descriptive_exploratory_answers.ipynb) |
 | Inferential | [**``../code/inferential_simulation.ipynb``**](../code/inferential_simulation.ipynb) |
-| Predictive  | [**``../code/classification_simulation.ipynb``**](../code/classification_simulation.ipynb) |
+| Predictive  | [**``../code/regression_simulation.ipynb``**](../code/regression_simulation.ipynb) |
 | Testing Assumptions | [**``../code/test_assumptions.ipynb``**](../code/test_assumptions.ipynb) |
 
 #### Descriptive Analysis
