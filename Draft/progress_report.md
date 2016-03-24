@@ -75,7 +75,7 @@ Now that a relationship between synapses and the unmasked value has been observe
 the relationship between synapses and the unmasked value. Several types of regressions were trained and tested using LOO cross-validation, 
 and their results are tabulated below.
 
-| Regressor | Accuracy | Standard Deviation |
+| Regression | Accuracy | Standard Deviation |
 |------------|----------|--------------------|
 |K-Nearest Neighbors| 0.25 | +/- 2.54 |
 |Linear SVR| 0.57 | +/- 0.18 |
@@ -95,3 +95,14 @@ to better represent the true data as well as the adjusted assumptions. To gain m
 the regression algorithms performed the way they did, we reevaluated our procedure thus far and tested our assumptions. 
 This is explained further in the Testing Assumptions and Next Steps sections.
 
+### Methods
+
+#### Descriptive Analysis
+
+#### Exploratory Analysis 
+
+#### Inferential Analysis 
+
+#### Predictive Analysis 
+
+#### Testing Assumptions
