@@ -97,6 +97,14 @@ This is explained further in the Testing Assumptions and Next Steps sections.
 
 ### Methods
 
+| Question Type | Code |
+|---------------|------|
+| Descriptive | [**``./code/descriptive_and_exploratory_answers.ipynb``**](./code/descriptive_and_exploratory_answers.ipynb) |
+| Exploratory | [**``./code/descriptive_and_exploratory_answers.ipynb``**](./code/descriptive_and_exploratory_answers.ipynb) |
+| Inferential | [**``./code/inferential_simulation.ipynb``**](./code/inferential_simulation.ipynb) |
+| Predictive  | [**``./code/classification_simulation.ipynb``**](./code/classification_simulation.ipynb) |
+| Testing Assumptions | [**``./code/test_assumptions.ipynb``**](./code/test_assumptions.ipynb) |
+
 #### Descriptive Analysis
 
 #### Exploratory Analysis 
