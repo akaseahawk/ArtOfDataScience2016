@@ -5,3 +5,4 @@
 - *Assignment 5*: code/regression_simulation.ipynb
 - *Assignment 6*: code/test_assumptions.ipynb
 - *Progress Report*: Draft/progress_report.md
+- *Assignment 7*: [``./code/extended_exploratory_combined.ipynb``](./code/extended_exploratory_combined.ipynb)
