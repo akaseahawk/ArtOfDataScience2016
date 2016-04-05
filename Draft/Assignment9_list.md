@@ -15,6 +15,12 @@
   * Redo z-layer bics without setting random state (take max at each k)
   * Work off of jay's gradient of density estimate (not using uniques), compare the two
   * Visualization of clustering after running the bic curve for higher ks (kmeans)
+  * In the spike:
+   * Min/Max x-value
+   * Min/Max y-value
+   * Min/Max z-value
+   * Max number of synapses at one point
+   * Point at which max number of synpases occurs
 
 ## Bijan:
 
