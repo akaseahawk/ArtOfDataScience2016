@@ -23,6 +23,12 @@
    * Point at which max number of synpases occurs
 
 ## Bijan:
+### 5 solo things hw week 4/4/2016
+#### 1) Overlay the scatterplot and vector graphs to find relationships - they seemed to correlate.
+#### 2) Find the direction between cluster centers per each z value, plot them all together and compare.
+#### 3) Run what I did last week, creating direction of increasing density, using # of partitions as a hyperparameter. Compare data across # of partitions (in x, y, z).
+#### 4) From the BIC curves generated last week, analyze the data from the z values that behaved differently (bend at 4 instead of 3). Plot histograms + cluster.
+#### 5) Elastic net regression on predicting synapses from xyz data for each z value, especially the ones that behaved differently earlier.
 
 ## Akash:
 
