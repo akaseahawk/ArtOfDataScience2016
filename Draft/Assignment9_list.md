@@ -1,7 +1,8 @@
 ## Group:
   * What is the spike? More Visualizations,
                      Regressions ,
-                     Clustering
+                     Clustering ,
+                     PCA
   * Bic keeps getting better as we go up right now--look at more clusters!
   * Look at histograms of the x,y bics from last time
   * Sample 100 or 1000 samples and rerun x,y bic curve after sampling (run bic many times, take max for each k)
