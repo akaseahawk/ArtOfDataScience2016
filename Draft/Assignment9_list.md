@@ -12,8 +12,8 @@
 
 ## Emily:
   * Plot vector estimates on top of the z-layer cluster center graph to see if estimate makes sense.
-  * Visualization of the "spike" (scatter plot)
-  * Redo z-layer bics without setting random state (take max at each k)
+  * Visualization of the "spike" (scatter plot, etc)
+  * Redo z-layer bics without setting random state (take max at each k) and analyze results
   * Work off of jay's gradient of density estimate (not using uniques), compare the two
   * Visualization of clustering after running the bic curve for higher ks (kmeans)
   * In the spike:
