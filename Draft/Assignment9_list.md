@@ -32,5 +32,12 @@
   * Elastic net regression on predicting synapses from xyz data for each z value, especially the ones that behaved differently earlier.
 
 ## Akash:
+  *Regression in cluster 1 and 4
+  *Regression in cluster 1,2,3
+  *Scale centroid charts to be equal sizes
+  *Compare centroid values in the 3 and 4 cluster groups
+  *Figure out how to apply point cloud
+  
+  
 
 ## Jay:
