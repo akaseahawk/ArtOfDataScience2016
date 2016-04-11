@@ -1,7 +1,14 @@
 #### Group
 * Look at what other groups are doing, try the same things
+** How the number (or hexbin) of unmasked or density changed along x-y, y-z, x-z?
+** box plot?
 
 #### Akash
+* What is the loss function being applied?
+* What does regression look like for different degrees of the polynomial
+* What is the description for knn and assumptions
+* Check cluster densities? (how?)
+* Anything interesting when rotating/comparing visualizing the centroid by density scatter?
 
 #### Bijan
 
