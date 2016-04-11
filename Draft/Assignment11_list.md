@@ -20,3 +20,4 @@
 * How does smoothing our data, say by applying a gaussian filter, affect the spike?
 
 #### Jay
+
