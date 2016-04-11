@@ -8,7 +8,7 @@
 * What does regression look like for different degrees of the polynomial
 * What is the description for knn and assumptions
 * Check cluster densities? (how?)
-* Anything interesting when rotating/comparing visualizing the centroid by density scatter?
+* Anything interesting when rotating/comparing visualizing the centroid by density scatter plots?
 
 #### Bijan
 
