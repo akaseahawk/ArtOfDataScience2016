@@ -1,5 +1,6 @@
 #### Group
 * Look at what other groups are doing, try the same things
+------------------------
 * (A) How the number (or hexbin) of unmasked or density changed along x-y, y-z, x-z?
 * (A) Apply box plot to density?
 
