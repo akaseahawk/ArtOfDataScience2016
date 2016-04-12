@@ -2,6 +2,7 @@
 * Look at what other groups are doing, try the same/similar things
 * (A) How the number (or hexbin) of unmasked or density changed along x-y, y-z, x-z?
 * (A) Apply box plot to density?
+* Use statistics to test differences between z layers?
 
 #### Akash
 * What is the loss function being applied?
@@ -11,6 +12,11 @@
 * Anything interesting when rotating/comparing visualizing the centroid by density scatter plots?
 
 #### Bijan
+* Clean my 3d vector fields
+* Clean my 2d vector fields
+* Do some useful statistics on their qualities
+* Clean my histograms, overlay, compare
+* Redo clustering on initial slices to make sure the 4 are different
 
 #### Emily
 * See how synapse density in a layer varies in the X, Y, Z directions
