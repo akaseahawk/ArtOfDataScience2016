@@ -30,4 +30,4 @@
 * Plot clusters in 3D space. Is there any spatial relations between members of the same cluster, or does there appear to be an indepndent relationship between cluster label and spatial position? Also plot clusters against XY, XZ, YZ planes.
 * Cluster using DBSCAN algorithm
 * Use my gradient estimate to look for local max/mins (look for where gradient is 0). Do they form any clear boundaries between regions in the volume?
-* Using boundaries found in previous part, fit Gaussians to each region defined by said boundaries. 
+* Tying back to what I tried last week, treat underlying distributions as Poisson: try doing linear regression with logarithmic link function (i.e. run a Poisson regression).
