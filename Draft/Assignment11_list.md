@@ -28,6 +28,6 @@
 #### Jay
 * Cluster data only with regards to density, i.e. do not consider coordinate positition. What's the optimal number of clusters?
 * Plot clusters in 3D space. Is there any spatial relations between members of the same cluster, or does there appear to be an indepndent relationship between cluster label and spatial position? Also plot clusters against XY, XZ, YZ planes.
+* Cluster using DBSCAN algorithm
 * Use my gradient estimate to look for local max/mins (look for where gradient is 0). Do they form any clear boundaries between regions in the volume?
-* Plot 0 density bins. Do they form any clear boundaries between regions in volume?
 * Using boundaries found in previous part, fit Gaussians to each region defined by said boundaries. 
