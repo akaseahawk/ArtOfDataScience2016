@@ -1,8 +1,11 @@
-- *Assignment 1*: Draft/summary.md
-- *Assignment 2*: Draft/questions.md, Draft/new+revised_questions.md
-- *Assignment 3*: code/descriptive_exploratory_answers.ipynb
-- *Assignment 4*: code/inferential_simulation.ipynb
-- *Assignment 5*: code/regression_simulation.ipynb
-- *Assignment 6*: code/test_assumptions.ipynb
-- *Progress Report*: Draft/progress_report.md
-- *Assignment 7*: [``./code/extended_exploratory_combined_team1.ipynb``](./code/extended_exploratory_combined_team1.ipynb),*also* [``/code/New_Analysis_akash.ipynb``](./code/New_Analysis_akash.ipynb)
+- *Assignment 1*: [``./Draft/summary.md``](./Draft/summary.md)
+- *Assignment 2*: [``./Draft/questions.md``](./Draft/questions.md)
+- *Assignment 3*: [``./Draft/new+revised_questions.md``](./Draft/new+revised_questions.md), [``./code/descriptive_exploratory_answers.ipynb``](./code/descriptive_exploratory_answers.ipynb)
+- *Assignment 4*: [``./code/inferential_simulation.ipynb``](./code/inferential_simulation.ipynb)
+- *Assignment 5*: [``./code/regression_simulation.ipynb``](./code/regression_simulation.ipynb)
+- *Assignment 6*: [``./code/test_assumptions.ipynb``](./code/test_assumptions.ipynb)
+- *Assignment 7*: [``presentation.pdf``](presentation.pdf)
+- *Assignment 8*: [``./Draft/progress_report.md``](./Draft/progress_report.md)
+- *Assignment 9*: [``./code/extended_exploratory_combined_team1.ipynb``](./code/extended_exploratory_combined_team1.ipynb), [``./code/New_Analysis_akash.ipynb``](./code/New_Analysis_akash.ipynb), [``./code/``](./code/) Emily, Jay, and Bijan's are in combined notebook.
+- *Assignment 10*: [``./Draft/Assignment10_list.md``](./Draft/Assignment10_list.md), [`./code/Assignment10_Group.ipynb```](./code/Assignment10_Group.ipynb), [``./code/Assignment10_Akash.ipynb``](./code/Assignment10_Akash.ipynb), [``./code/Assignment10_Bijan.ipynb``](./code/Assignment10_Bijan.ipynb), [``./code/Assignment10_Emily.ipynb``](./code/Assignment10_Emily.ipynb), [``./code/Assignment10_Jay.ipynb``](./code/Assignment10_Jay.ipynb)
+- *Assignment 11*: [``./Draft/Assignment11_list.md``](./Draft/Assignment11_list.md), [``./code/Assignment11_Group.ipynb``](./code/Assignment11_Group.ipynb), [``./code/Assign11_Bijan.ipynb``](./code/Assign11_Bijan.ipynb), [``./code/Assignment11_Emily.ipynb``](./code/Assignment11_Emily.ipynb), [``./codeAssignment11_Akash.ipynb``](./codeAssignment11_Akash.ipynb), [``./code/Assignment11_jay.ipynb``](./code/Assignment11_jay.ipynb)
