@@ -2,6 +2,9 @@
 * Getting more evidence to supporting the spike being noise/not being noise (we'll see which evidence is more convincing)
   * Looking at distributions of synapse density in the spike across x,y,z
   * Fixing older analyses. In histograms, make bin size a function of sample size.
+* Investigate image data
+  * Preliminaries: figure out how units line up with our data, e.g. what are our data coordinates in nanometers/micrometers? What do regions of high synaptic density look like in the image data? Can we see layers? 
+  * Plot cluster analyses, gradient estimations, etc. overtop of image data.
 * Exploring the layering we see in the y-direction.
   * Visualizations
   * Analysis of image of dataset and comparison of our statistical analysis to what we see in the image (are there any obvious hints that these may be the cortex layers?)
