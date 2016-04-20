@@ -36,7 +36,7 @@ def get_tilenums_at_res(xcoord, ycoord, res):
         y = np.floor(float(y)/(512*(2**res)))
     return x,y
 
-def get_image_url(xcoord, ycoord, z, res):
+def get_image_url(xcoord, ycoord, z, res=1):
     z += 2917
     z = int(z)
     x, y = get_tilenums_at_res(int(xcoord), int(ycoord), res)
