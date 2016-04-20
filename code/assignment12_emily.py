@@ -58,9 +58,8 @@ import requests
 import urllib
 import io
 
-y_bounds = [(1564,1837), (1837,2071), (2071,2305), (2305,2539), (2539,3124)]
-
 '''
+y_bounds = [(1564,1837), (1837,2071), (2071,2305), (2305,2539), (2539,3124)]
 for _, bounds in enumerate(y_bounds):
 	new_im = Image.new('RGB',(1000,1000))
 	temp = data_thresholded[:,1]
@@ -95,8 +94,6 @@ def get_image(xrange,yrange,xs,ys):
 
 xs = np.unique(data_thresholded[:,0])
 ys = np.unique(data_thresholded[:,1])
-print ys.shape
-print xs.shape
-get_image((10,20),(15,20),xs,ys)
+get_image((0,1),(0,len(ys)-1),xs,ys)
 
 
