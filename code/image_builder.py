@@ -9,7 +9,7 @@ import io
 import numpy as np
 import urllib2
 
-def get_image(xrange,yrange,xs,ys):
+def get_image(xrange,yrange,xs,ys,name):
 	spacing = 100
 	new_im = Image.new('RGB',(spacing*(10+len(xs[xrange[0]:xrange[1]])),spacing*(10+len(ys[yrange[0]:yrange[1]]))))
 	i = 0
@@ -30,7 +30,7 @@ def get_image(xrange,yrange,xs,ys):
 			new_im.paste(im,(j,i))
 			j += spacing + 10
 		i += spacing + 10	
-	new_im.save('new_im'+str(i)+'.bmp')
+	new_im.save('name'+'.bmp')
 	new_im.show()
 
 
