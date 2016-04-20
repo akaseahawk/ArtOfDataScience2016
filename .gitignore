@@ -2,3 +2,4 @@
 .ipynb_checkpoints
 output.csv
 *.npy
+*.DS_Store
