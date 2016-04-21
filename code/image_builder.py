@@ -30,8 +30,9 @@ def get_image(xrange,yrange,xs,ys,name):
 			new_im.paste(im,(j,i))
 			j += spacing + 10
 		i += spacing + 10	
-	new_im.save('name'+'.bmp')
-	new_im.show()
+
+	new_im.save(name+'.bmp')
+
 
 
 
