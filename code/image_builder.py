@@ -11,10 +11,9 @@ import urllib2
 
 def get_image(xrange,yrange,xs,ys,name):
 	spacing = 100
-	xsize = (20*len(xs[xrange[0]:xrange[1]])) + (spacing*len(xs[xrange[0]:xrange[1]]))
-	ysize = (20*len(ys[yrange[0]:yrange[1]])) + (spacing*len(ys[yrange[0]:yrange[1]]))
+	xsize = (spacing*len(xs[xrange[0]:xrange[1]]))
+	ysize = (spacing*len(ys[yrange[0]:yrange[1]]))
 	new_im = Image.new('RGB',(xsize,ysize))
-	print xsize,ysize
 	i = 0
 	for y in ys[yrange[0]:yrange[1]]:
 		j = 0
@@ -29,8 +28,8 @@ def get_image(xrange,yrange,xs,ys,name):
 			size = (spacing,spacing)
 			im.thumbnail(size, Image.ANTIALIAS)
 			new_im.paste(im,(j,i))
-			j += spacing + 10
-		i += spacing + 10	
+			j += spacing
+		i += spacing	
 
 	new_im.save(name+'.bmp')
 
