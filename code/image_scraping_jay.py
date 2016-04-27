@@ -1,20 +1,57 @@
 # Image scraping (Jay Miller)
-
+# REVISED VERSION
+# older functions left below since some peoples notebooks
+# might still be using them
 import matplotlib.pyplot as plt
-#%matplotlib inline
 import numpy as np
 import urllib2
+from skimage import io
 
-plt.style.use('ggplot')
-np.random.seed(1)
-url = ('https://raw.githubusercontent.com/Upward-Spiral-Science'
-       '/data/master/syn-density/output.csv')
-data = urllib2.urlopen(url)
-csv = np.genfromtxt(data, delimiter=",")[1:] # don't want first row (labels)
-data = csv
-sizes = [len(np.unique(data[:, i])) for i in range(3)]
-ranges = [(np.max(data[:, i]), np.min(data[:,i])) for i in range(3)]
-ranges_diff = [np.max(data[:, i])-np.min(data[:,i]) for i in range(3)]
+def bin_to_nparray(cx, cy, cz=55, res=1):
+    """
+    Here's the updated function.
+    params:
+        cx, cy, cz - bin coordinates (from syn-density csv)
+        res - resolution to get the image at
+    returns:
+        a numpy array of grayscale values for each pixel in the bin
+        specified along the xy-plane, at slice specified by cz...
+        note that the actual bins are across around 100 cz values
+        so if you wanted all the images for a bin, you'd call this function
+        for every z value
+    """
+    z = 2917+cz
+    cx, cy = int(cx), int(cy)
+    bounds = cdata_to_pixels(cx, cy, res)
+    size = bounds[:, 1]-bounds[:,0]
+    tiles = bounds//512
+    # tiles = tiles + [[0, 1],[0, 1]]
+    crops = np.empty((2, 2))
+    crops = bounds-(tiles*512)
+    # crops = crops.T
+    tiles = tiles + [[0, 1],[0, 1]]
+    xr, yr = [np.arange(*tiles[i, :]) for i in [0, 1]]
+    imgs = [[tile_xy_to_nparray(x, y, res, z) for y in yr]
+             for x in xr]
+    imgs = np.array(imgs)
+    imgs = imgs.reshape((len(xr)*512, len(yr)*512))
+    return imgs[crops[0,0]:-(512-crops[0,1]),
+                crops[1,0]:-(512-crops[1,1])]
+
+# make coordinates to bin boundaries mapping
+def cdata_to_pixels(cx, cy, res, binwidthx=0, binwidthy=0):
+    bounds = [(c-19, c+(39*w)+20) for c,w in [(cx, binwidthx), (cy, binwidthy)]]
+    bounds = np.array(bounds)
+    power = 5-res
+    return bounds*(2**power)
+
+def tile_xy_to_nparray(x, y, res, z=55):
+    end = '/'+reduce(lambda x, y: str(x) +'_'+str(y), [y, x, res])
+    end += '.png'
+    imgurl = 'http://openconnecto.me/ocp/catmaid/bock11/image/xy/'+str(z)+end
+    image = io.imread(imgurl)
+    return image
+
 
 xPix = 135424
 yPix = 119808
@@ -47,20 +84,11 @@ def get_image_url(xcoord, ycoord, z, res=1):
     imgurl = 'http://openconnecto.me/ocp/catmaid/bock11/image/xy/'+str(z) +end
     return imgurl
 
-######################################################################
-# REVISED IMAGE SCRAPER
-from IPython.display import Image, HTML, display
-
-# make coordinates to bin boundaries mapping
-def cdata_to_pixels(cx, cy, res, binwidthx=0, binwidthy=0):
-    bounds = [(c-19, c+(39*w)+20) for c,w in [(cx, binwidthx), (cy, binwidthy)]]
-    bounds = np.array(bounds)
-    power = 5-res
-    return bounds*(2**power)
 
 # This one combines tile images grabbed from viz.neurodata into a single image
 # via javascript onto an HTML canvas, sort of clunky to include in notebooks,
-# TODO: convert the HTML canvas into an image and save it as a PNG or something
+# the numpy array one is better...
+from IPython.display import Image, HTML, display
 def get_bin_image(cx, cy, xwidth=0, ywidth=0, cz=55, res=1, imsize=(512,512), disp_text=False):
     """Return the image of the bin corresponding to cx, cy, cz in the data
     params:
@@ -74,7 +102,7 @@ def get_bin_image(cx, cy, xwidth=0, ywidth=0, cz=55, res=1, imsize=(512,512), di
     cx, cy = int(cx), int(cy)
     bounds = cdata_to_pixels(cx, cy, res, xwidth, ywidth)
     size = bounds[:, 1]-bounds[:,0]
-    
+
     tiles = bounds//512
     # tiles = tiles + [[0, 1],[0, 1]]
     crops = np.empty((2, 2))
@@ -101,7 +129,7 @@ def get_bin_image(cx, cy, xwidth=0, ywidth=0, cz=55, res=1, imsize=(512,512), di
                 elif k==len(np.arange(*tiles[1, :]))-1:
                     sy = 0
                     height = crops[1, 1]
-                newargs = {'sx':sx, 'sy':sy, 
+                newargs = {'sx':sx, 'sy':sy,
                            'swidth':width, 'sheight':height,
                            'dx':0, 'dy':0,
                            'dwidth':width, 'dheight':height}
@@ -133,7 +161,7 @@ def get_bin_image(cx, cy, xwidth=0, ywidth=0, cz=55, res=1, imsize=(512,512), di
         javascript += """
         ctx.drawImage(img, {sx}, {sy}, {swidth}, {sheight}, {dx}, {dy}, {dwidth}, {dheight} );
         """.format(**cargs[xyid])
-            
+
     javascript += """
     var tempCanvas = document.createElement('canvas');
     tempCanvas.width = c.width;
@@ -152,3 +180,8 @@ def get_bin_image(cx, cy, xwidth=0, ywidth=0, cz=55, res=1, imsize=(512,512), di
     html = HTML(html)
     display(html)
     return html_raw, canvasID
+
+if __name__ == "__main__":
+    b = bin_to_nparray(2000, 2000)
+    print b
+    print np.max(b), np.min(b)
