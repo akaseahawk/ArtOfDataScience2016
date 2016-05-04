@@ -2,12 +2,16 @@
 **Table of Contents:**
 - [Overview](./finals_report.md#overview)
 - [Scientific Questioning](./final_report.md#scientific-questioning)
-  - [Decriptive Analysis](./final_report.md#descriptive-analysis)
+  - [Descriptive Analysis](./final_report.md#descriptive-analysis)
   - [Exploratory Analysis](./final_report.md#exploratory-analysis)
   - [Inferential Analysis](./final_report.md#inferential-analysis)
   - [Predictive Analysis](./final_report.md#predictive-analysis)
   - [Testing Assumptions](./final_report.md#testing-assumptions)
   - [Extended Exploratory Analysis](./final_report.md#extended-exploratory-analysis)
+    - [Building a Model](./final_report.md#building-a-model)
+    - [Orienting Ourselves](./final_report.md#orienting-ourselves)
+    - [Trends in Synaptic Density](./final_report.md#trends-in-synaptic-density)
+    - [Imaging our Data](./final_report.md#imaging-our-data)
   - [Conclusion](./final_report.md#conclusion)
 
 ----------
@@ -15,7 +19,7 @@
 Our dataset is taken from the 2011 *M. musculus* V1 dataset from *Network anatomy and in vivo physiology of visual cortical neurons* (Bock et al)<sup id="r-dbock">[1](f-dbock)</sup>. The raw dataset was over 30 TB and was further processed resulting in an EM volume representation of the data. Our synaptic density data is a result of downsampling the EM data through synapse characterization algorithms and spatial reduction. Our dataset consists of (x,y,z) coordinates, the number of synapses at that point and the unmasked value for that region. 
 
 ### Significance
-Synapse connectivity is vital to understanding neural circuits in the cerebral cortex. Synaptic density may be an indicator for the network of neurons in the cortex. Specifically, patterns in synaptic density can illuminate features within cortical layers and throughout cortical layers that may be significant to understanding the overall structure of the cortex. Combined with information about neural functioning, an understanding of cortical structure may be useful for studying etiology of mental illnesses with known cortical defects as well as diseases that plague the cerebral cortex.
+Synapse connectivity is vital to understanding neural circuits in the cerebral cortex. Synaptic density may be a strong indicator characteristics of neuron networks in the cortex. Specifically, patterns in synaptic density can illuminate features within cortical layers and throughout cortical layers that may be significant to understanding the overall structure of the cortex. Combined with information about neural functioning, an understanding of cortical structure may be useful for studying etiology of mental illnesses with known cortical defects as well as diseases that plague the cerebral cortex. With our data,  we can analyze the spatial distribution of synapses in a sample of the cerebral cortex with the goal of understanding synaptic density patterns within the cortex.
 
 ### Scientific Questioning
 We will discuss our analysis of the synapse density data, starting with exploratory and descriptive analysis, through hypothesis testing and regression, and ending with extended exploratory analysis inspired by previous results. The questions posed are followed by their outcomes.
@@ -117,7 +121,7 @@ Now we will investigate the independence assumption. To do this we can look at t
 Here we see that the covariance was highly concentrated along the diagonal, indicating that the data was infact independently distributed.
 
 ### Extended Exploratory Analysis
-#### Constructing a model of our data
+#### Building a Model
 
 We use k-means clusetering on the data, scaling the densities up so that they have a greater effect on the clustering. We calculated the maximum and minimum vvalues for clusters of synaptic density. There was a clean partitioning of the density ranges with little overlap.
 
@@ -138,26 +142,25 @@ Next, we used four Poissons to model the data based on the results of the cluste
 The mean, median and standard deviatio of the simulated data are close to that of the true data. To decide whether the model was an accurate representation of the true data, we compared the models using a K-S test.
 A low p-value of 1.7e-73for the Poisson model indicates that the model is a poor representation of the true distribution. 
 
-#### Density variation in x, y, z directions
+#### Orienting Ourselves
+The margins of our data were cut out per suggestion of the instructor. The sample is "rough around the edges" due to either the physical sample being imaged having rough edges or as an artifact of the processing the raw data went through to get the downsampled synaptic density data we are analyzing. One we excluded the margins from the data, we analyzed our data to determine the orientation of the volume in the 3D cortical space. We do this through analyzing trends in synaptic density in which we find evidence for cortical layers in the y-direction. From the Bock paper, we see that the imaged region of the cortex included cortial layers 1, 2/3, and upper 4. This, along with our evidence for y-layers indicates that the y-layer of highest density is likely part of cortical layer 1 (the cortical layer with the highest cell density and thus highest synaptic density). Moving from layer 1 of the cortex (the highest density region of our data) to deeper layers along the y-axis is thus the same as moving deeper into the cortex.
+** image of synapse overlay **
+(Figure: From http://viz.neurodata.io/project/bock11/#, we overlaid the 'mp4merged' synapse data over our dataset.
+Y from top to bottom. X from left to right. We see increasing synaptic density as y increases. We see a band of high density
+at the top which we beleive to be a portion of layer of of the cortex)
+
+#### Trends in Synaptic Density
 We see evident signs of cortical layering in the y-direction defined by density local minima. 
 ** put in mean_xyz.png , total_dens_xyz.png, deriv_across_y.png**
 We see local maxima that are steadily decreasing as y increases. This is strong evidence for the regions between local minima across the y-coordinates being cortical layers. The local minima defining the supposed cortical layer boundaries are the y-coordinates: 1837, 2071, 2305, 2539. The magnitude of the changes in synaptic density across y are evident.
+
+There are no obvious or interesting trends along x or z in the above figures. 
 
 We investigated whether the synapse distribution within these possible cortical layers is uniform. In the figures below, we see that the BIC curve defines the optimal number of clusters for synapses within these layers to be greater than one, meaning that synapses are not distributed uniformly throughout the layers.
 ** add in clusters in 3d space from jay's assignment 11 **
 We see trands in clusters across the y-level sets. The maximum density red cluster and the minimum density blue cluster have strong variations in y. The ratio of red-to-blue is highest at smaller values of y and decreases to a minimum at the highest value of y. There is an obvious gradient of high-low density across y, giving more evidence for our suggestion of the cortical layers spanning the y-coordinates.
 
+### Imaging our Data
+
 ### Conclusion
-
-
-### Methods
-
-Code and mathematical theory for all questions is provided in detail for each analysis in the following notebooks.
-
-| Question Type | Code |
-|---------------|------|
-| Descriptive | [**``../code/descriptive_exploratory_answers.ipynb``**](../code/descriptive_exploratory_answers.ipynb) |
-| Exploratory | [**``../code/descriptive_exploratory_answers.ipynb``**](../code/descriptive_exploratory_answers.ipynb) |
-| Inferential | [**``../code/inferential_simulation.ipynb``**](../code/inferential_simulation.ipynb) |
-| Predictive  | [**``../code/regression_simulation.ipynb``**](../code/regression_simulation.ipynb) |
-| Testing Assumptions | [**``../code/test_assumptions.ipynb``**](../code/test_assumptions.ipynb) |
+ The patterns we saw in synapse density across our volume are significant. Our evidence for the cortical layers in y-direction is confirmed by the Bock 2011 paper: "After finding the calcium-imaged region of the cortex...each section was...tall enough (350 μm) to include cortical layers 1, 2/3 and upper 4" (Bock et al)<sup id="r-dbock">[1](f-dbock)</sup>. The analysis we performed to come to the conclusion of the direction of cortical "depth" is a step toward understanding how synapse connectivity is related to cortical layers. The analysis is a strong foundation for further exploration into structural synapse patterns within the cortex. These patterns may be strong indicators of the overall patterns in the neural structure of the cortex.
