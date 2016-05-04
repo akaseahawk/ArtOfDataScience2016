@@ -8,7 +8,7 @@
   - [Predictive Analysis](./final_report.md#predictive-analysis)
   - [Testing Assumptions](./final_report.md#testing-assumptions)
   - [Extended Exploratory Analysis](./final_report.md#extended-exploratory-analysis)
-  - [Conclusion(./final_report.md#conclusion)
+  - [Conclusion](./final_report.md#conclusion)
 
 ----------
 ### Overview
