@@ -12,7 +12,7 @@
     - [Orienting Ourselves](./final_report.md#orienting-ourselves)
     - [Trends in Synaptic Density](./final_report.md#trends-in-synaptic-density)
     - [Imaging our Data](./final_report.md#imaging-our-data)
-  - [Conclusion](./final_report.md#conclusion)
+- [Conclusion](./final_report.md#conclusion)
 
 ----------
 ### Overview
@@ -49,7 +49,6 @@ thus we produced a scatter plot of the data to get a general idea of how the syn
 <img src="../figs for progress report/scatter.png" data-canonical-src="../figs for progress report/scatter.png" width="400" height="300" />
 
 ** Add histogram of synaptic density **
-** Add cutting off edges **
 
 
 #### Exploratory Analysis
@@ -144,21 +143,34 @@ A low p-value of 1.7e-73for the Poisson model indicates that the model is a poor
 
 #### Orienting Ourselves
 The margins of our data were cut out per suggestion of the instructor. The sample is "rough around the edges" due to either the physical sample being imaged having rough edges or as an artifact of the processing the raw data went through to get the downsampled synaptic density data we are analyzing. One we excluded the margins from the data, we analyzed our data to determine the orientation of the volume in the 3D cortical space. We do this through analyzing trends in synaptic density in which we find evidence for cortical layers in the y-direction. From the Bock paper, we see that the imaged region of the cortex included cortial layers 1, 2/3, and upper 4. This, along with our evidence for y-layers indicates that the y-layer of highest density is likely part of cortical layer 1 (the cortical layer with the highest cell density and thus highest synaptic density). Moving from layer 1 of the cortex (the highest density region of our data) to deeper layers along the y-axis is thus the same as moving deeper into the cortex.
-** image of synapse overlay **
-(Figure: From http://viz.neurodata.io/project/bock11/#, we overlaid the 'mp4merged' synapse data over our dataset.
+
+> <img src="../figs/synapse_overlay.PNG" data-canonical-src="../figs/synapse_overlay.PNG" width="800" height="500" />
+> <small><b>Figure #.</b>
+From http://viz.neurodata.io/project/bock11/#, we overlaid the 'mp4merged' synapse data over our dataset.
 Y from top to bottom. X from left to right. We see increasing synaptic density as y increases. We see a band of high density
-at the top which we beleive to be a portion of layer of of the cortex)
+at the top which we beleive to be a portion of layer of of the cortex. </small>
 
 #### Trends in Synaptic Density
 We see evident signs of cortical layering in the y-direction defined by density local minima. 
-** put in mean_xyz.png , total_dens_xyz.png, deriv_across_y.png**
-We see local maxima that are steadily decreasing as y increases. This is strong evidence for the regions between local minima across the y-coordinates being cortical layers. The local minima defining the supposed cortical layer boundaries are the y-coordinates: 1837, 2071, 2305, 2539. The magnitude of the changes in synaptic density across y are evident.
+> <img src="../figs/mean_xyz.png" data-canonical-src="../figs/means_xyz.png" width="800" height="533" />
+> <small><b>
+Figure #.</b>We are plotting the mean the x-z plane at each y coordinate value. We see local maxima that are steadily decreasing as y increases.The local minima define boundary points between cortical layers. With these definitions, we see 4 layers present. </small>
+
+> <img src="../figs/total_dens_xyz.png" data-canonical-src="../figs/total_dens_xyz.pngg" width="900" height="250" />
+> <small><b>Figure #.</b>Similar to the figure above, we are plotting the total number of synapses in every x-z plane for a specific y-value. We see the same wave pattern across y indicating cortical layers with cortical depth increasing with increasing y.</small>
+
+> <img src="../figs/deriv_across_y.png" data-canonical-src="../figs/deriv_across_y.png" width="800" height="533" />
+> <small><b>Figure #.</b>The magnitude of the changes in synaptic density across y are evident. The changes in synaptic density represent moving from one layer to the next across y. The first 4 "spikes" or "hills" are the most well-defined and represent the 4 cortical layers we believe to be present in our volume. </small>
+
+> <img src="../figs/y_var_clusters.png" data-canonical-src="../figs/y_var_clusters.png" width="800" height="533" />
+> <small><b>Figure #.</b>We see trends in clusters across the y-level sets. The maximum density red cluster and the minimum density blue cluster have strong variations in y. The ratio of red-to-blue is highest at smaller values of y and decreases to a minimum at the highest value of y. There is an obvious gradient of high-low density across y, giving more evidence for our suggestion of the cortical layers spanning the y-coordinates. </small>
+
+This is strong evidence for the regions between local minima across the y-coordinates being cortical layers. The local minima defining the supposed cortical layer boundaries are the y-coordinates: 1837, 2071, 2305, 2539.
 
 There are no obvious or interesting trends along x or z in the above figures. 
 
 We investigated whether the synapse distribution within these possible cortical layers is uniform. In the figures below, we see that the BIC curve defines the optimal number of clusters for synapses within these layers to be greater than one, meaning that synapses are not distributed uniformly throughout the layers.
-** add in clusters in 3d space from jay's assignment 11 **
-We see trands in clusters across the y-level sets. The maximum density red cluster and the minimum density blue cluster have strong variations in y. The ratio of red-to-blue is highest at smaller values of y and decreases to a minimum at the highest value of y. There is an obvious gradient of high-low density across y, giving more evidence for our suggestion of the cortical layers spanning the y-coordinates.
+
 
 ### Imaging our Data
 
