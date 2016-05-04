@@ -1,31 +1,26 @@
-## Progress Report - March 22nd, 2016
+## Final Report -- May 5, 2016
 **Table of Contents:**
-- [Overview](./progress_report.md#overview)
-- [Scientific Questioning](./progress_report.md#scientific-questioning)
-  - [Decriptive Analysis](./progress_report.md#descriptive-analysis)
-  - [Exploratory Analysis](./progress_report.md#exploratory-analysis)
-  - [Inferential Analysis](./progress_report.md#inferential-analysis)
-  - [Predictive Analysis](./progress_report.md#predictive-analysis)
-  - [Testing Assumptions](./progress_report.md#testing-assumptions)
-  - [Next Steps](./progress_report.md#next-steps)
-- [Methods](./progress_report.md#methods)
-  - [Decriptive Analysis](./progress_report.md#descriptive-analysis-1)
-  - [Exploratory Analysis](./progress_report.md#exploratory-analysis-1)
-  - [Inferential Analysis](./progress_report.md#inferential-analysis-1)
-  - [Predictive Analysis](./progress_report.md#predictive-analysis-1)
-  - [Testing Assumptions](./progress_report.md#testing-assumptions-1)
+- [Overview](./finals_report.md#overview)
+- [Scientific Questioning](./final_report.md#scientific-questioning)
+  - [Decriptive Analysis](./final_report.md#descriptive-analysis)
+  - [Exploratory Analysis](./final_report.md#exploratory-analysis)
+  - [Inferential Analysis](./final_report.md#inferential-analysis)
+  - [Predictive Analysis](./final_report.md#predictive-analysis)
+  - [Testing Assumptions](./final_report.md#testing-assumptions)
+  - [Extended Exploratory Analysis](./final_report.md#extended-exploratory-analysis)
+  - [Conclusion(./final_report.md#conclusion)
 
 ----------
-
 ### Overview
-Mental illness causes huge financial social burdens for those affected by it. Gaining an understanding of brain function brings the research community one step closer to combating this plague on humanity. Brain structure is a good indicator of how the brain behaves. Understanding the structure of the brain may help us model functionality of brain feautres as function of synapse density. We have been analyzing the structure of the brain through synaptic density maps with the goal of understanging the connection between brain structure and brain function.
+Our dataset is taken from the 2011 *M. musculus* V1 dataset from *Network anatomy and in vivo physiology of visual cortical neurons* (Bock et al)<sup id="r-dbock">[1](f-dbock)</sup>. The raw dataset was over 30 TB and was further processed resulting in an EM volume representation of the data. Our synaptic density data is a result of downsampling the EM data through synapse characterization algorithms and spatial reduction. Our dataset consists of (x,y,z) coordinates, the number of synapses at that point and the unmasked value for that region. 
+
+### Significance
+Synapse connectivity is vital to understanding neural circuits in the cerebral cortex. Synaptic density may be an indicator for the network of neurons in the cortex. Specifically, patterns in synaptic density can illuminate features within cortical layers and throughout cortical layers that may be significant to understanding the overall structure of the cortex. Combined with information about neural functioning, an understanding of cortical structure may be useful for studying etiology of mental illnesses with known cortical defects as well as diseases that plague the cerebral cortex.
 
 ### Scientific Questioning
-We will discuss our analysis of the synapse density data, starting with exploratory and descriptive analysis, through hypothesis testing and regression. The questions posed and their outcomes are described sequentially, with code and methods used to answer them described at the end of this report.
+We will discuss our analysis of the synapse density data, starting with exploratory and descriptive analysis, through hypothesis testing and regression, and ending with extended exploratory analysis inspired by previous results. The questions posed are followed by their outcomes.
 
-#### Descriptive Analysis
-The natural first step when working with any data is to ask exploratory and descriptive questions about it. We have been working with the Kasthuri (2015) synapse densityi dataset (http://neurodata.io/Kasthurietal2014). The dataset consists of (x,y,z) coordinates, the number of synapses at that point and the unmasked value for that region. 
-
+#### Descriptive Analysis 
 We began by seeking some basic understanding of this data. To understand the structure of our data, we first asked questions regarding charachteristics of the data such as dataset size and shape, number of total synapses, and number of invalid (i.e. unmasked value = 0) data points were present in our data, what a histogram of the synapse density looks like. Below are the results of these questions. 
 
 |Query|Syn Density Dataset|
@@ -36,12 +31,21 @@ We began by seeking some basic understanding of this data. To understand the str
 
 <img src="../figs for progress report/histogram.png" data-canonical-src="../figs for progress report/histogram.png" width="400" height="300" />
 
-Another descriptive question asked regarded the meaning of the unmasked variable. After consulting with those familiar with the dataset who have an understanding of how the data was collected, we were able to gain an understanding of the meaning of the variable. The unmaksed value was a way to differentiate between boundary regions and those regions missing data from good-quality regions of data when the data was acquired. The mask represents regions which are to be ignored and are not meaningful data. More specifically, the unmasked value represents the number of voxels in that row which have meaningful data. Naturally, we suspected a relationship between the unmasked value and number of synapses at a given coordinate, and as such, tested for the correlation between the two. The correlation  between the unmasked value and number of synapses at a coordinate is 0.89621769. 
+Another descriptive question asked regarded the meaning of the unmasked variable. After consulting with those familiar with the dataset who have an understanding of how the data was collected, we were able to gain an understanding of the meaning of the variable. The unmaksed value was a way to differentiate between boundary regions and those regions missing data from good-quality regions of data when the data was processed. The mask represents regions which are to be ignored and are not meaningful data. Data points with an unmasked value of zero are regions considered insignificant. More specifically, the unmasked value represents the number of voxels in that row which have meaningful data. 
+
+** Histogram of unmasked ** (lots of data ignored, lots meaningful)
+
+Naturally, we suspected a relationship between the unmasked value and number of synapses at a given coordinate, and as such, tested for the correlation between the two. The correlation  between the unmasked value and number of synapses at a coordinate is 0.89621769. 
+
+** Change to something about 3d distribution of syn density, find plot we made **
 
 The final descriptive question asked regarded clustering of the data. We suspected a natural clustering of synapses to be present, and
 thus we produced a scatter plot of the data to get a general idea of how the synapses are clustered and the structure as a whole.
 
 <img src="../figs for progress report/scatter.png" data-canonical-src="../figs for progress report/scatter.png" width="400" height="300" />
+
+** Add histogram of synaptic density **
+** Add cutting off edges **
 
 
 #### Exploratory Analysis
@@ -67,12 +71,10 @@ To gain a better understanding of the limits of our dataset, we asked about the 
 |Point at which max number of synpases occurs|(2749.0, 1876.0, 1054.0)|
 
 #### Inferential Analysis
-We now try to learn about the distribution of synapses through statistical inference. We chose to examine the distribution by looking at 'slices' of data across specific z-values. There were 11 such z-slices. Our data model was that the synapse density per slice follows a multinomial distribution. The null hypothesis was that the distribution was uniform across each slice (that is, each 'bin' of the multinomial distribution has equal probability). The alternative was that the distribution was not uniform (i.e. each bin does not have the same probability). We ran a chi-squared test to determine whether or not to reject the null. The values for each bin and then the p-value are as follows:
 
-- [ 4.985  4.611  4.755  5.437  5.779  5.449  5.241  6.158  5.035  5.097 4.816]
-- p-value: 0.999997409328
-
-So we found that we cannot infact reject the null hypothesis. Looking at values for each bin, we can see that they are actually fairly uniform.
+##### Synaptic Density Uniformity
+** just use hist of synapses, show non-uniformity **
+The histogram of synaptic density clearly shows a non-uniform distribution of synapses in our sample. We see that medium-density areas are more common than low or high density, thus ruling out the hypothesis of uniformity of synaptic density.
 
 #### Predictive Analysis
 Now that a relationship between synapses and the unmasked value has been observed, we can attempt to solidify
@@ -85,7 +87,7 @@ and their results are tabulated below.
 |Linear SVR| 0.57 | +/- 0.18 |
 |Linear| 0.62 | +/- 0.40 |
 |Random Forest| 0.79 | +/- 0.51 |
-|Polynomial Regression| 0.85 | +/- 0.27 |=
+|Polynomial Regression| 0.85 | +/- 0.27 |
 
 The regression accuracy on our data based on the five tested regression algorithms is, at best, 
 85%, and, at worst, 18%. From the poor results of the K-nearest neighbors and linear SVR regressions, 
@@ -114,11 +116,39 @@ Now we will investigate the independence assumption. To do this we can look at t
 
 Here we see that the covariance was highly concentrated along the diagonal, indicating that the data was infact independently distributed.
 
-#### Next Steps
+### Extended Exploratory Analysis
+#### Constructing a model of our data
 
-One thing that we have found is that the distribution of synapses across each z-slice is fairly uniform. However, we do not know anything about the spatial distribution within each of these z-slices. Therefore an interesting next step would be to examine the distribution of synapses along the xy-plane for each z-slice, and contrast and compare them across the set of all 11 slices. 
+We use k-means clusetering on the data, scaling the densities up so that they have a greater effect on the clustering. We calculated the maximum and minimum vvalues for clusters of synaptic density. There was a clean partitioning of the density ranges with little overlap.
 
-Another important next step is to interpret our regression results. While we did find that certain regression algorithms gave fairly good results, we don't know much about how the spatial positioning affected this, since there was obviously a strong relation between unmasked and synapses. Therefore we would like to run more regressions that don't involve this strong relationship, for example we would like to see if we can predict synapse density (synapses/unmasked) given x, y, z, another interesting relationship to examine would be the relationship betweeen position and unmasked (ignoring synapses), as this would give interesting information on the distribution of brain matter and also shed light on results about density.
+|Cluster | Minumum | Maximum |
+|--------|---------|---------|
+|1| 0.0014 | 0.0033 |
+|2| 0.0006 | 0.0011 |
+|3| 0 | 0.0006 |
+|4| 0.0011 | 0.0014 |
+
+Next, we used four Poissons to model the data based on the results of the clustering above. The table below compares statistical characteristics of the true data to the simulated Poisson data.
+
+|------| Mean | Median | Standard Deviation |
+|--------------|------|--------|--------------------|
+|True Data|  | 163 | 174 | 69 |
+|Simulated Data| 163 | 178 | 64 |
+
+The mean, median and standard deviatio of the simulated data are close to that of the true data. To decide whether the model was an accurate representation of the true data, we compared the models using a K-S test.
+A low p-value of 1.7e-73for the Poisson model indicates that the model is a poor representation of the true distribution. 
+
+#### Density variation in x, y, z directions
+We see evident signs of cortical layering in the y-direction defined by density local minima. 
+** put in mean_xyz.png , total_dens_xyz.png, deriv_across_y.png**
+We see local maxima that are steadily decreasing as y increases. This is strong evidence for the regions between local minima across the y-coordinates being cortical layers. The local minima defining the supposed cortical layer boundaries are the y-coordinates: 1837, 2071, 2305, 2539. The magnitude of the changes in synaptic density across y are evident.
+
+We investigated whether the synapse distribution within these possible cortical layers is uniform. In the figures below, we see that the BIC curve defines the optimal number of clusters for synapses within these layers to be greater than one, meaning that synapses are not distributed uniformly throughout the layers.
+** add in clusters in 3d space from jay's assignment 11 **
+We see trands in clusters across the y-level sets. The maximum density red cluster and the minimum density blue cluster have strong variations in y. The ratio of red-to-blue is highest at smaller values of y and decreases to a minimum at the highest value of y. There is an obvious gradient of high-low density across y, giving more evidence for our suggestion of the cortical layers spanning the y-coordinates.
+
+### Conclusion
+
 
 ### Methods
 
@@ -131,33 +161,3 @@ Code and mathematical theory for all questions is provided in detail for each an
 | Inferential | [**``../code/inferential_simulation.ipynb``**](../code/inferential_simulation.ipynb) |
 | Predictive  | [**``../code/regression_simulation.ipynb``**](../code/regression_simulation.ipynb) |
 | Testing Assumptions | [**``../code/test_assumptions.ipynb``**](../code/test_assumptions.ipynb) |
-
-#### Descriptive Analysis
-
-Here we were looking for numbers and figures that summarize our dataset well. We looked at total number of synapses, made a histogram of synaptic density, calculated correlation between unmasked and synapses, and made a 3D-scatterplot of the data, in order to gain some intuitive sense of how our data looks in Euclidean space. We could have additionally done these computations accross each z-slice, instead of just for the entire data set, as this might have given us some value information on how the data varies across slices.
-
-#### Exploratory Analysis 
-
-One thing we investigated here was how the data was clustered. We ran the k-means algorithm for several different values of k and then plotted the data, coloring it based on clusters. This gave us some intuitive sense of how the data could/should be clustered, although we did not examine what the optimal number of clusters might've been (although we did do this later). We also looked at the min and max values for the positions, and also where the maximum number of synapses occured. Another interesting thing that we could have done was to look at where this maximum number occurs for each z-slice and then we could see how this position changes across z-slices.
-
-#### Inferential Analysis 
-
-Here we examined spatial distribution of synaptic density for each z-slice. That is, we looked at the total sum of synapses/unmasked for each distinct z-value. We determined using a chi-squared test, that the synapses may be uniformly distributed (that is we failed to reject our null hypothesis that they were uniform). We used a chi-squared test, primarily due to previous familiarity. To prove that the power converges to 1 given sufficient samples under the alternate, we generated similar data to the alternate and then plotted the power increasing.
-
-<img src="../figs for progress report/power.png" data-canonical-src="../figs for progress report/power.png" width="400" height="400" />
-
-Alternatively, we could have looked at the distribution across the entire data set, instead of per slice, but this would be infeasible using a chi-squared test. We could also have investigated further by doing another slicing across say the x-axis, for each of our z-slices, and then checking whether the distribution for the x-slices was uniform. 
-
-#### Predictive Analysis 
-
-Here we ran a regression that tried to predict unmasked given x, y, z, synapses. Unfortunately we realized in retrospect that this was not the most interesting regression to do, given the strong relationship between synapses and unmasked. Our initial train of thought was that it would've been interesting to see how synapses affects the amount of brain region (this is how we were interpreting unmasked). 
-
-We ran Linear Regression, Support Vector Regression (SVR), K-Nearest Neighbor Regression (KNN), Random Forest Regression, and Polynomial Regression, all just with default sklearn parameters. In the future we should tune these parameters to best fit our data. To show that these regressions should infact be fairly effective on our data, we ran them on simulated data similar to ours, and then plotted the coefficient of determination (we used 10-fold cross-validation to determine the std-dev). 
-
-<img src="../figs for progress report/regression.png"  width="400" height="200" />
-
-#### Testing Assumptions
-
-To test independence, we looked at the sample covariance matrix. This means we were just looking at linear independence. So while we said that by looking at the sample covariance matrix, we were concluding that the data was independent, we actually are only determining that it is not linearly independent. That being said, lack of linear independence is still a strong indicator of an overall lack of independence.
-
-To test identical distributions, we ran a GMM for different numbers of clusters and then plotted the BIC (Bayesian Information Criterion) for each. We looked for an elbow in the plot of BIC against # of clusters to determine the optimal one. This turned out to be 4. Interestingly, there is also a high spike at 11 clusters, but we attribute this to the fact that there are 11 z-slices. 
