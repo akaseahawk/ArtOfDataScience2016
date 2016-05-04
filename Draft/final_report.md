@@ -12,6 +12,7 @@
     - [Orienting Ourselves](./final_report.md#orienting-ourselves)
     - [Trends in Synaptic Density](./final_report.md#trends-in-synaptic-density)
     - [Imaging our Data](./final_report.md#imaging-our-data)
+- [Other Findings](./final_report.md#other-findings)
 - [Conclusion](./final_report.md#conclusion)
 
 ----------
@@ -33,31 +34,29 @@ We began by seeking some basic understanding of this data. To understand the str
 |Total Synapses|7704178| 
 |Invalid data points|6595|
 
-> <center><img src="../figs/hist_synapses_before_clean.png" data-canonical-src="../figs/hist_synapses_before_clean.png" width="700" height="500" /><center>
+> <center><img src="../figs/hist_synapses_before_clean.png" data-canonical-src="../figs/hist_synapses_before_clean.png" width="600" height="400" /><center>
 > <center><small><b><br>Figure #.</b>
 Synapse distribution of whole data set. We notice a very large number of voxels with 0 synapses. Many of these get removed after removing magins from dataset and removing points with an unmasked value of 0.</small><center>
 
 
-> <center><img src="../figs/hist_syndens.png" data-canonical-src="../figs/hist_syndens.png" width="700" height="500" /><center>
+> <center><img src="../figs/hist_syndens.png" data-canonical-src="../figs/hist_syndens.png" width="600" height="400" /><center>
 > <center><small><b><br>Figure #.</b>
 Synaptic density distribution of whole data set after data set "cleaned" by removing margins. We notice most data points represent a "medium-density" area. The medium-density area is more common than low or high density areas. </small><center>
 
 Another descriptive question asked regarded the meaning of the unmasked variable. After consulting with those familiar with the dataset who have an understanding of how the data was collected, we were able to gain an understanding of the meaning of the variable. The unmaksed value was a way to differentiate between boundary regions and those regions missing data from good-quality regions of data when the data was processed. The mask represents regions which are to be ignored and are not meaningful data. Data points with an unmasked value of zero are regions considered insignificant. More specifically, the unmasked value represents the number of voxels in that row which have meaningful data. 
 
-> <center><img src="../figs/unmasked_hist.png" data-canonical-src="../figs/unmasked_hist.png" width="700" height="500" /><center>
+> <center><img src="../figs/unmasked_hist.png" data-canonical-src="../figs/unmasked_hist.png" width="600" height="400" /><center>
 > <center><small><b><br>Figure #.</b>
 Unmasked value distribution of whole data set. We notice a large number of points with an unmasked value of 0. This means a lot of daata is going to be ignored. The larger spikes toward the right of the graph indicate that, though a lot of data is insignificant due to a zero unmasked value, a large portion of the data has a high unmasked value and is meaningful. </small><center>
 
 Naturally, we suspected a relationship between the unmasked value and number of synapses at a given coordinate, and as such, tested for the correlation between the two. The correlation  between the unmasked value and number of synapses at a coordinate is 0.89621769. 
 
-** Change to something about 3d distribution of syn density, find plot we made **
-
 The final descriptive question asked regarded clustering of the data. We suspected a natural clustering of synapses to be present, and
 thus we produced a scatter plot of the data to get a general idea of how the synapses are clustered and the structure as a whole.
 
-> <center><img src="../figs for progress report/scatter.png" data-canonical-src="../figs for progress report/scatter.png" width="400" height="300" /><center>
-> <center><small><b><br>Figure #.</b>
-Scatter plot of our dataset. </small><center>
+> <center><img src="../figs/syn_dist_scatter.png" data-canonical-src="../figs/syn_dist_scatter.png" width="600" height="400" /><center>
+> <center><small><b><br>Figure #.</b> Scatter plot of a random sample of 100 points in our data set. (x,y,z) points are plotted with the marker size weighted by number of synapses. </small><center>
+
 
 
 #### Exploratory Analysis
@@ -87,7 +86,7 @@ To gain a better understanding of the limits of our dataset, we asked about the 
 #### Inferential Analysis
 
 ##### Synaptic Density Uniformity
-> <center><img src="../figs/hist_syndens.png" data-canonical-src="../figs/hist_syndens.png" width="700" height="500" /><center>
+> <center><img src="../figs/hist_syndens.png" data-canonical-src="../figs/hist_syndens.png" width="600" height="400" /><center>
 > <center><small><b><br>Figure #.</b>The histogram of synaptic density clearly shows a non-uniform distribution of synapses in our sample. We see that medium-density areas are more common than low or high density.</small><center>
 Since the plot shows a non-uniform distribution of synapses in our sample, we rule out the hypothesis of uniformity of synaptic density.
 
@@ -158,24 +157,24 @@ A low p-value of 1.7e-73for the Poisson model indicates that the model is a poor
 #### Orienting Ourselves
 The margins of our data were cut out per suggestion of the instructor. The sample is "rough around the edges" due to either the physical sample being imaged having rough edges or as an artifact of the processing the raw data went through to get the downsampled synaptic density data we are analyzing. One we excluded the margins from the data, we analyzed our data to determine the orientation of the volume in the 3D cortical space. We do this through analyzing trends in synaptic density in which we find evidence for cortical layers in the y-direction. From the Bock paper, we see that the imaged region of the cortex included cortial layers 1, 2/3, and upper 4. This, along with our evidence for y-layers indicates that the y-layer of highest density is likely part of cortical layer 1 (the cortical layer with the highest cell density and thus highest synaptic density). Moving from layer 1 of the cortex (the highest density region of our data) to deeper layers along the y-axis is thus the same as moving deeper into the cortex.
 
-> <center><img src="../figs/synapse_overlay.PNG" data-canonical-src="../figs/synapse_overlay.PNG" width="800" height="500" /><center>
+> <center><img src="../figs/synapse_overlay - Copy.PNG" data-canonical-src="../figs/synapse_overlay.PNG" width="800" height="500" /><center>
 > <center><small><b><br>Figure #.</b>
 From http://viz.neurodata.io/project/bock11/#, we overlaid the 'mp4merged' synapse data over our dataset.
 Y from top to bottom. X from left to right. We see increasing synaptic density as y increases. We see a band of high density
-at the top which we beleive to be a portion of layer of of the cortex. </small><center>
+at the top which we beleive to be a portion of layer of of the cortex defined above the red line. </small><center>
 
 #### Trends in Synaptic Density
 We see evident signs of cortical layering in the y-direction defined by density local minima. 
-> <center><img src="../figs/mean_xyz.png" data-canonical-src="../figs/means_xyz.png" width="800" height="533" /><center>
+> <center><img src="../figs/mean_xyz.png" data-canonical-src="../figs/means_xyz.png" width="600" height="400" /><center>
 > <center><small><b><br>Figure #.</b>We are plotting the mean the x-z plane at each y coordinate value. We see local maxima that are steadily decreasing as y increases.The local minima define boundary points between cortical layers. With these definitions, we see 4 layers present. </small><center>
 
 > <center><img src="../figs/total_dens_xyz.png" data-canonical-src="../figs/total_dens_xyz.pngg" width="900" height="250" /><center>
 > <center><small><b><br>Figure #.</b>Similar to the figure above, we are plotting the total number of synapses in every x-z plane for a specific y-value. We see the same wave pattern across y indicating cortical layers with cortical depth increasing with increasing y.</small><center>
 
-> <center><img src="../figs/deriv_across_y.png" data-canonical-src="../figs/deriv_across_y.png" width="800" height="533" /><center>
+> <center><img src="../figs/deriv_across_y.png" data-canonical-src="../figs/deriv_across_y.png" width="600" height="400" /><center>
 > <center><small><b><br>Figure #.</b>The magnitude of the changes in synaptic density across y are evident. The changes in synaptic density represent moving from one layer to the next across y. The first 4 "spikes" or "hills" are the most well-defined and represent the 4 cortical layers we believe to be present in our volume. </small><center>
 
-> <center><img src="../figs/y_var_clusters.png" data-canonical-src="../figs/y_var_clusters.png" width="800" height="533" /><center>
+> <center><img src="../figs/y_var_clusters.png" data-canonical-src="../figs/y_var_clusters.png" width="600" height="400" /><center>
 > <center><small><b><br>Figure #.</b>We see trends in clusters across the y-level sets. The maximum density red cluster and the minimum density blue cluster have strong variations in y. The ratio of red-to-blue is highest at smaller values of y and decreases to a minimum at the highest value of y. There is an obvious gradient of high-low density across y, giving more evidence for our suggestion of the cortical layers spanning the y-coordinates. </small><center>
 
 This is strong evidence for the regions between local minima across the y-coordinates being cortical layers. The local minima defining the supposed cortical layer boundaries are the y-coordinates: 1837, 2071, 2305, 2539.
@@ -186,6 +185,8 @@ We investigated whether the synapse distribution within these possible cortical 
 
 
 ### Imaging our Data
+
+### Other findings
 
 ### Conclusion
  The patterns we saw in synapse density across our volume are significant. Our evidence for the cortical layers in y-direction is confirmed by the Bock 2011 paper: "After finding the calcium-imaged region of the cortex...each section was...tall enough (350 μm) to include cortical layers 1, 2/3 and upper 4" (Bock et al)<sup id="r-dbock">[1](f-dbock)</sup>. The analysis we performed to come to the conclusion of the direction of cortical "depth" is a step toward understanding how synapse connectivity is related to cortical layers. The analysis is a strong foundation for further exploration into structural synapse patterns within the cortex. These patterns may be strong indicators of the overall patterns in the neural structure of the cortex.
