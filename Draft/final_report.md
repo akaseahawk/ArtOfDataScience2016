@@ -27,17 +27,26 @@ We will discuss our analysis of the synapse density data, starting with explorat
 #### Descriptive Analysis 
 We began by seeking some basic understanding of this data. To understand the structure of our data, we first asked questions regarding charachteristics of the data such as dataset size and shape, number of total synapses, and number of invalid (i.e. unmasked value = 0) data points were present in our data, what a histogram of the synapse density looks like. Below are the results of these questions. 
 
-|Query|Syn Density Dataset|
+|Query|Synaptic Density Dataset|
 |-------|-----------------|
 |Dataset Size/Shape|(61776, 5)|
 |Total Synapses|7704178| 
 |Invalid data points|6595|
 
-<img src="../figs for progress report/histogram.png" data-canonical-src="../figs for progress report/histogram.png" width="400" height="300" />
+> <img src="../figs/hist_synapses_before_clean.png" data-canonical-src="../figs/hist_synapses_before_clean.png" width="700" height="500" />
+> <small><b>Figure #.</b>
+Synapse distribution of whole data set. We notice a very large number of voxels with 0 synapses. Many of these get removed after removing magins from dataset and removing points with an unmasked value of 0.</small>
+
+
+> <img src="../figs/hist_syndens.png" data-canonical-src="../figs/hist_syndens.png" width="700" height="500" />
+> <small><b>Figure #.</b>
+Synaptic density distribution of whole data set after data set "cleaned" by removing margins. We notice most data points represent a "medium-density" area. The medium-density area is more common than low or high density areas. </small>
 
 Another descriptive question asked regarded the meaning of the unmasked variable. After consulting with those familiar with the dataset who have an understanding of how the data was collected, we were able to gain an understanding of the meaning of the variable. The unmaksed value was a way to differentiate between boundary regions and those regions missing data from good-quality regions of data when the data was processed. The mask represents regions which are to be ignored and are not meaningful data. Data points with an unmasked value of zero are regions considered insignificant. More specifically, the unmasked value represents the number of voxels in that row which have meaningful data. 
 
-** Histogram of unmasked ** (lots of data ignored, lots meaningful)
+> <img src="../figs/unmasked_hist.png" data-canonical-src="../figs/unmasked_hist.png" width="700" height="500" />
+> <small><b>Figure #.</b>
+Unmasked value distribution of whole data set. We notice a large number of points with an unmasked value of 0. This means a lot of daata is going to be ignored. The larger spikes toward the right of the graph indicate that, though a lot of data is insignificant due to a zero unmasked value, a large portion of the data has a high unmasked value and is meaningful. </small>
 
 Naturally, we suspected a relationship between the unmasked value and number of synapses at a given coordinate, and as such, tested for the correlation between the two. The correlation  between the unmasked value and number of synapses at a coordinate is 0.89621769. 
 
@@ -46,16 +55,18 @@ Naturally, we suspected a relationship between the unmasked value and number of 
 The final descriptive question asked regarded clustering of the data. We suspected a natural clustering of synapses to be present, and
 thus we produced a scatter plot of the data to get a general idea of how the synapses are clustered and the structure as a whole.
 
-<img src="../figs for progress report/scatter.png" data-canonical-src="../figs for progress report/scatter.png" width="400" height="300" />
-
-** Add histogram of synaptic density **
+> <img src="../figs for progress report/scatter.png" data-canonical-src="../figs for progress report/scatter.png" width="400" height="300" />
+> <small><b>Figure #.</b>
+Scatter plot of our dataset. </small>
 
 
 #### Exploratory Analysis
 Knowing what the unmasked value is, we could remove invalid data entries where unmasked values were zero. With the remaining data, we sought to gain a general understanding of how the synapses are structured in the sample. Thus we asked how the data could be clustered and which metrics should be used to cluster the synapses. We used k-means, varying k-values. In terms of which metrics to be using, since we're dealing with objects in 3D space, Euclidean distance is the obvious choice. These results are displayed below. 
 
-<img src="../figs for progress report/kmeans_cluster.png" data-canonical-src="../figs for progress report/kmeans_clusters.png" width="400" height="300" />
-<img src="../figs for progress report/kmeans_centers.png" data-canonical-src="../figs for progress report/kmeans_centers.png" width="400" height="300" />
+> <img src="../figs for progress report/kmeans_cluster.png" data-canonical-src="../figs for progress report/kmeans_clusters.png" width="400" height="300" />
+> <small><b>Figure #.</b>Scatter plot of k-means clusters, colored according to cluster.</small>
+> <img src="../figs for progress report/kmeans_centers.png" data-canonical-src="../figs for progress report/kmeans_centers.png" width="400" height="300" />
+> <small><b>Figure #.</b>K-means clusters centers.</small>
 
 We ran k-means clustering with 4, 5, and 10 clusters and found that 4 clusters looked the most well organized and naturally structured
 out of those options. Our main goal in running the k-means clustering algorithm at this point was to see if there is any sense of 
@@ -76,8 +87,9 @@ To gain a better understanding of the limits of our dataset, we asked about the 
 #### Inferential Analysis
 
 ##### Synaptic Density Uniformity
-** just use hist of synapses, show non-uniformity **
-The histogram of synaptic density clearly shows a non-uniform distribution of synapses in our sample. We see that medium-density areas are more common than low or high density, thus ruling out the hypothesis of uniformity of synaptic density.
+> <img src="../figs/hist_syndens.png" data-canonical-src="../figs/hist_syndens.png" width="700" height="500" />
+> <small><b>Figure #.</b>The histogram of synaptic density clearly shows a non-uniform distribution of synapses in our sample. We see that medium-density areas are more common than low or high density.</small>
+Since the plot shows a non-uniform distribution of synapses in our sample, we rule out the hypothesis of uniformity of synaptic density.
 
 #### Predictive Analysis
 Now that a relationship between synapses and the unmasked value has been observed, we can attempt to solidify
@@ -109,15 +121,17 @@ The prior analyses all made the assumptions that our data was i.i.d (identically
 
 First we will look at the identical assumption. As mentioned previously, in our exploratory analyses, we did notice some clustering, so it was likely that the data was infact not identically distributed. We more formally investigate this now. We did GMM clustering on the data, and plotted the BIC against the number of clusters.
 
-<img src="../figs for progress report/clusters_bic.png" data-canonical-src="../figs for progress report/clusters_bic.png" width="400" height="400" />
+> <img src="../figs for progress report/clusters_bic.png" data-canonical-src="../figs for progress report/clusters_bic.png" width="400" height="400" />
+> <small><b>Figure #.</b>We notice an elbow at 4 clusters, so we conclude that this is a good suggestion for the optimal number of clusters.</small>
 
-We noticed an elbow at 4 clusters, so we concluded that this was the optimal number of clusters. Thus we concluded that our assumption of identical distributions was false. Also note the spike at 11 clusters: we hypothesize that this is due to the fact that there are 11 possible z-values.
+Thus we concluded that our assumption of identical distributions was false. Also note the spike at 11 clusters: we hypothesize that this is due to the fact that there are 11 possible z-values.
 
 Now we will investigate the independence assumption. To do this we can look at the sample-covariance matrix of our data. Since our data set was so big, doing this for all the data at once is infeasible. Instead we randomly sample from the data many times, taking the sample covariance for each of these random samples. Then we finally average these covariance matrices (element-wise).
 
-<img src="../figs for progress report/covariance_matrix.png" data-canonical-src="../figs for progress report/covariance_matrix.png" width="400" height="400" />
+> <img src="../figs for progress report/covariance_matrix.png" data-canonical-src="../figs for progress report/covariance_matrix.png" width="400" height="400" />
+<small><b>Figure #.</b>Sample covariance matrix for an average of many random samples of our data. Covariance is highly concentrated along the diagonal. </small>
 
-Here we see that the covariance was highly concentrated along the diagonal, indicating that the data was infact independently distributed.
+Here we see that the covariance was highly concentrated along the diagonal, indicating that the data was in fact independently distributed.
 
 ### Extended Exploratory Analysis
 #### Building a Model
