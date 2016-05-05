@@ -186,6 +186,14 @@ We investigated whether the synapse distribution within these possible cortical 
 
 ### Imaging our Data
 
+It seems that the coordinates in our data set line up with the viz.neurodata coordinates at resolution 5. To demonstrate why this seems likely to be true, markers have been placed at (0, 0), (4192, 0), (0, 3358), (4192, 3358)--i.e. corners of the boundary--and an image of these markers at resolution 8 is shown below.
+
+<img src="../code/viz_bounds.png" width = "400px">
+
+Inspecting the JS/html more we see that the actual number of pixels at resolution 5 is 4232x3744, and as we decrease resolution the pixels are doubled. Assuming the data coordinates mark bin centers (to explain the offset of the initial x). 
+
+Now we just need to figure out z-axis. The z values in the image data go from 2917-4156, which is a range of 1239. So it seems that the z-values in the data correspond to the z-values in the image data, other than a translation of 2917. Some python functions were written to get the image for a given bin and return it as a numpy array; additionally the code can grab the overlaid synapse annotation (the python module can be seen here: [**``../code/image_scraping_jay.py``**](../code/image_scraping_jay.py) ).
+
 ### Other findings
 
 ### Conclusion
