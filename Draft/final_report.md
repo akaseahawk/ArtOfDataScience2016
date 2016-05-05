@@ -85,10 +85,11 @@ To gain a better understanding of the limits of our dataset, we asked about the 
 
 #### Inferential Analysis
 
-##### Synaptic Density Uniformity
+We can use statistical inference techniques to determine whether or not synaptic density is uniform throughout the 3D volume in the data. We will run a Chi-Squared test to determine whether or not to reject the null hypothesis that synaptic density is uniform throughout the volume. The Chi-Squared test will compare the number of synapses per bin in the data given, to the expected number of synapses under the null hypothesis. The expected number of synapses can be calculated by first computing the average synaptic density (synapses/unmasked for each row) and then multiplying unmasked by this average density value for every row. The Chi-Squared test returned a p-value of approximately 0, meaning that we can reject the null. I.e. synaptic density is *not* uniform throughout the volume.
+
 > <center><img src="../figs/hist_syndens.png" data-canonical-src="../figs/hist_syndens.png" width="600" height="400" /><center>
 > <center><small><b><br>Figure #.</b>The histogram of synaptic density clearly shows a non-uniform distribution of synapses in our sample. We see that medium-density areas are more common than low or high density.</small><center>
-Since the plot shows a non-uniform distribution of synapses in our sample, we rule out the hypothesis of uniformity of synaptic density.
+This plot further demonstrates the result obtained from the Chi-Squared test: synaptic density is non-uniform.
 
 #### Predictive Analysis
 Now that a relationship between synapses and the unmasked value has been observed, we can attempt to solidify
