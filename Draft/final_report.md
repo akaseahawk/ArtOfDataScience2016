@@ -200,7 +200,7 @@ Using these image functions, we can explore some of qualitative features of our 
 
 Now we can also view the overlaid synapse markings for this bin:
 
-<img src="../figs/max_synapses_overlay.png" width = "400px">
+<img src="../figs/max_synapse_overlay.png" width = "400px">
 
 ### Other findings
 
