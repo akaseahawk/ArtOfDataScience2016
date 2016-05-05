@@ -17,7 +17,7 @@
 
 ----------
 ### Overview
-Our dataset is taken from the 2011 *M. musculus* V1 dataset from *Network anatomy and in vivo physiology of visual cortical neurons* (Bock et al)<sup id="r-dbock">[1](f-dbock)</sup>. The raw dataset was over 30 TB and was further processed resulting in an EM volume representation of the data. Our synaptic density data is a result of downsampling the EM data through synapse characterization algorithms and spatial reduction. Our dataset consists of (x,y,z) coordinates, the number of synapses at that point and the unmasked value for that region. 
+Our dataset is taken from the 2011 *M. musculus* V1 dataset from *Network anatomy and in vivo physiology of visual cortical neurons* (Bock et al)<sup id="r-dbock">[1](f-dbock)</sup>. The raw dataset was over 30 TB and was further processed resulting in an EM volume representation of the data. Our synaptic density data is a result of downsampling the EM data through synapse characterization algorithms and spatial reduction. Our dataset consists of (x,y,z) coordinates, the number of synapses at that point and the unmasked value for that region.
 
 ### Significance
 Synapse connectivity is vital to understanding neural circuits in the cerebral cortex. Synaptic density may be a strong indicator characteristics of neuron networks in the cortex. Specifically, patterns in synaptic density can illuminate features within cortical layers and throughout cortical layers that may be significant to understanding the overall structure of the cortex. Combined with information about neural functioning, an understanding of cortical structure may be useful for studying etiology of mental illnesses with known cortical defects as well as diseases that plague the cerebral cortex. With our data,  we can analyze the spatial distribution of synapses in a sample of the cerebral cortex with the goal of understanding synaptic density patterns within the cortex.
@@ -25,13 +25,13 @@ Synapse connectivity is vital to understanding neural circuits in the cerebral c
 ### Scientific Questioning
 We will discuss our analysis of the synapse density data, starting with exploratory and descriptive analysis, through hypothesis testing and regression, and ending with extended exploratory analysis inspired by previous results. The questions posed are followed by their outcomes.
 
-#### Descriptive Analysis 
-We began by seeking some basic understanding of this data. To understand the structure of our data, we first asked questions regarding charachteristics of the data such as dataset size and shape, number of total synapses, and number of invalid (i.e. unmasked value = 0) data points were present in our data, what a histogram of the synapse density looks like. Below are the results of these questions. 
+#### Descriptive Analysis
+We began by seeking some basic understanding of this data. To understand the structure of our data, we first asked questions regarding charachteristics of the data such as dataset size and shape, number of total synapses, and number of invalid (i.e. unmasked value = 0) data points were present in our data, what a histogram of the synapse density looks like. Below are the results of these questions.
 
 |Query|Synaptic Density Dataset|
 |-------|-----------------|
 |Dataset Size/Shape|(61776, 5)|
-|Total Synapses|7704178| 
+|Total Synapses|7704178|
 |Invalid data points|6595|
 
 > <center><img src="../figs/hist_synapses_before_clean.png" data-canonical-src="../figs/hist_synapses_before_clean.png" width="600" height="400" /><center>
@@ -43,13 +43,13 @@ Synapse distribution of whole data set. We notice a very large number of voxels 
 > <center><small><b><br>Figure #.</b>
 Synaptic density distribution of whole data set after data set "cleaned" by removing margins. We notice most data points represent a "medium-density" area. The medium-density area is more common than low or high density areas. </small><center>
 
-Another descriptive question asked regarded the meaning of the unmasked variable. After consulting with those familiar with the dataset who have an understanding of how the data was collected, we were able to gain an understanding of the meaning of the variable. The unmaksed value was a way to differentiate between boundary regions and those regions missing data from good-quality regions of data when the data was processed. The mask represents regions which are to be ignored and are not meaningful data. Data points with an unmasked value of zero are regions considered insignificant. More specifically, the unmasked value represents the number of voxels in that row which have meaningful data. 
+Another descriptive question asked regarded the meaning of the unmasked variable. After consulting with those familiar with the dataset who have an understanding of how the data was collected, we were able to gain an understanding of the meaning of the variable. The unmaksed value was a way to differentiate between boundary regions and those regions missing data from good-quality regions of data when the data was processed. The mask represents regions which are to be ignored and are not meaningful data. Data points with an unmasked value of zero are regions considered insignificant. More specifically, the unmasked value represents the number of voxels in that row which have meaningful data.
 
 > <center><img src="../figs/unmasked_hist.png" data-canonical-src="../figs/unmasked_hist.png" width="600" height="400" /><center>
 > <center><small><b><br>Figure #.</b>
 Unmasked value distribution of whole data set. We notice a large number of points with an unmasked value of 0. This means a lot of daata is going to be ignored. The larger spikes toward the right of the graph indicate that, though a lot of data is insignificant due to a zero unmasked value, a large portion of the data has a high unmasked value and is meaningful. </small><center>
 
-Naturally, we suspected a relationship between the unmasked value and number of synapses at a given coordinate, and as such, tested for the correlation between the two. The correlation  between the unmasked value and number of synapses at a coordinate is 0.89621769. 
+Naturally, we suspected a relationship between the unmasked value and number of synapses at a given coordinate, and as such, tested for the correlation between the two. The correlation  between the unmasked value and number of synapses at a coordinate is 0.89621769.
 
 The final descriptive question asked regarded clustering of the data. We suspected a natural clustering of synapses to be present, and
 thus we produced a scatter plot of the data to get a general idea of how the synapses are clustered and the structure as a whole.
@@ -60,7 +60,7 @@ thus we produced a scatter plot of the data to get a general idea of how the syn
 
 
 #### Exploratory Analysis
-Knowing what the unmasked value is, we could remove invalid data entries where unmasked values were zero. With the remaining data, we sought to gain a general understanding of how the synapses are structured in the sample. Thus we asked how the data could be clustered and which metrics should be used to cluster the synapses. We used k-means, varying k-values. In terms of which metrics to be using, since we're dealing with objects in 3D space, Euclidean distance is the obvious choice. These results are displayed below. 
+Knowing what the unmasked value is, we could remove invalid data entries where unmasked values were zero. With the remaining data, we sought to gain a general understanding of how the synapses are structured in the sample. Thus we asked how the data could be clustered and which metrics should be used to cluster the synapses. We used k-means, varying k-values. In terms of which metrics to be using, since we're dealing with objects in 3D space, Euclidean distance is the obvious choice. These results are displayed below.
 
 > <center><img src="../figs for progress report/kmeans_cluster.png" data-canonical-src="../figs for progress report/kmeans_clusters.png" width="400" height="300" /><center>
 > <center><small><b><br>Figure #.</b>Scatter plot of k-means clusters, colored according to cluster.</small><center>
@@ -68,7 +68,7 @@ Knowing what the unmasked value is, we could remove invalid data entries where u
 > <small><b><br>Figure #.</b>K-means clusters centers.</small><center>
 
 We ran k-means clustering with 4, 5, and 10 clusters and found that 4 clusters looked the most well organized and naturally structured
-out of those options. Our main goal in running the k-means clustering algorithm at this point was to see if there is any sense of 
+out of those options. Our main goal in running the k-means clustering algorithm at this point was to see if there is any sense of
 natural clustering in the data and whether or not it was visible and apparent. Later, we return to clustering where we find the optimal number of clusters of synapses for the dataset.
 
 We also asked about the values of mean of the probability mass function (f: R^3→[0, 1] where f(x, y, z)=probability that a synapse exists at (x, y, z)). The mean is 1.61875161875e-05.
@@ -92,7 +92,7 @@ Since the plot shows a non-uniform distribution of synapses in our sample, we ru
 
 #### Predictive Analysis
 Now that a relationship between synapses and the unmasked value has been observed, we can attempt to solidify
-the relationship between synapses and the unmasked value. Several types of regressions were trained and tested using 10-fold cross-validation, 
+the relationship between synapses and the unmasked value. Several types of regressions were trained and tested using 10-fold cross-validation,
 and their results are tabulated below.
 
 | Regression | Accuracy | Standard Deviation |
@@ -103,16 +103,16 @@ and their results are tabulated below.
 |Random Forest| 0.79 | +/- 0.51 |
 |Polynomial Regression| 0.85 | +/- 0.27 |
 
-The regression accuracy on our data based on the five tested regression algorithms is, at best, 
-85%, and, at worst, 18%. From the poor results of the K-nearest neighbors and linear SVR regressions, 
+The regression accuracy on our data based on the five tested regression algorithms is, at best,
+85%, and, at worst, 18%. From the poor results of the K-nearest neighbors and linear SVR regressions,
 We see that the relationship between the variables (x,y,z,synapses) and the unmasked value is most likely
 not linear due to the poorer performance of the linear regression compared to the very well-performing
-polynomial regression. We believe K-nearest neighbors failed to the 
-high dimensionality of our data. Distances become less representative of the data with increasing 
-dimensionaltiy. Next, we plan to investigate why the polynomial regression and random forest regression performed relatively well and review our 
+polynomial regression. We believe K-nearest neighbors failed to the
+high dimensionality of our data. Distances become less representative of the data with increasing
+dimensionaltiy. Next, we plan to investigate why the polynomial regression and random forest regression performed relatively well and review our
 assumptions for accuracy and completeness as well as adjust our regression algorithm parameters
 to better represent the true data as well as the adjusted assumptions. To gain more understanding of why
-the regression algorithms performed the way they did, we reevaluated our procedure thus far and tested our assumptions. 
+the regression algorithms performed the way they did, we reevaluated our procedure thus far and tested our assumptions.
 This is explained further in the Testing Assumptions and Next Steps sections.
 
 #### Testing Assumptions
@@ -152,7 +152,7 @@ Next, we used four Poissons to model the data based on the results of the cluste
 |Simulated Data| 163 | 178 | 64 |
 
 The mean, median and standard deviatio of the simulated data are close to that of the true data. To decide whether the model was an accurate representation of the true data, we compared the models using a K-S test.
-A low p-value of 1.7e-73for the Poisson model indicates that the model is a poor representation of the true distribution. 
+A low p-value of 1.7e-73for the Poisson model indicates that the model is a poor representation of the true distribution.
 
 #### Orienting Ourselves
 The margins of our data were cut out per suggestion of the instructor. The sample is "rough around the edges" due to either the physical sample being imaged having rough edges or as an artifact of the processing the raw data went through to get the downsampled synaptic density data we are analyzing. One we excluded the margins from the data, we analyzed our data to determine the orientation of the volume in the 3D cortical space. We do this through analyzing trends in synaptic density in which we find evidence for cortical layers in the y-direction. From the Bock paper, we see that the imaged region of the cortex included cortial layers 1, 2/3, and upper 4. This, along with our evidence for y-layers indicates that the y-layer of highest density is likely part of cortical layer 1 (the cortical layer with the highest cell density and thus highest synaptic density). Moving from layer 1 of the cortex (the highest density region of our data) to deeper layers along the y-axis is thus the same as moving deeper into the cortex.
@@ -164,7 +164,7 @@ Y from top to bottom. X from left to right. We see increasing synaptic density a
 at the top which we beleive to be a portion of layer of of the cortex defined above the red line. </small><center>
 
 #### Trends in Synaptic Density
-We see evident signs of cortical layering in the y-direction defined by density local minima. 
+We see evident signs of cortical layering in the y-direction defined by density local minima.
 > <center><img src="../figs/mean_xyz.png" data-canonical-src="../figs/means_xyz.png" width="600" height="400" /><center>
 > <center><small><b><br>Figure #.</b>We are plotting the mean the x-z plane at each y coordinate value. We see local maxima that are steadily decreasing as y increases.The local minima define boundary points between cortical layers. With these definitions, we see 4 layers present. </small><center>
 
@@ -179,12 +179,14 @@ We see evident signs of cortical layering in the y-direction defined by density 
 
 This is strong evidence for the regions between local minima across the y-coordinates being cortical layers. The local minima defining the supposed cortical layer boundaries are the y-coordinates: 1837, 2071, 2305, 2539.
 
-There are no obvious or interesting trends along x or z in the above figures. 
+There are no obvious or interesting trends along x or z in the above figures.
 
 > <center><img src="../figs/akash_relaive_freq_density_within_cluster.png"<center>
 > <center><small><b><br>Figure #.</b>The distribution within 2 clusters fit the same distributional shape of the entire data set, while the other two are skewed. However, the final cluster has a disproportionate amount of zero values, likely due to the data not being . </small><center>
 
 We investigated whether the synapse distribution within these possible cortical layers is uniform. In the figures below, we see that the BIC curve defines the optimal number of clusters for synapses within these layers to be greater than one, meaning that synapses are not distributed uniformly throughout the layers.
+
+#### ^^^ TODO: Better to use chi-squared test to demonstrate non-uniformity than the BIC curve
 
 
 ### Imaging our Data
@@ -193,7 +195,7 @@ It seems that the coordinates in our data set line up with the viz.neurodata coo
 
 <img src="../code/viz_bounds.png" width = "400px">
 
-Inspecting the JS/html more we see that the actual number of pixels at resolution 5 is 4232x3744, and as we decrease resolution the pixels are doubled. Assuming the data coordinates mark bin centers (to explain the offset of the initial x). 
+Inspecting the JS/html more we see that the actual number of pixels at resolution 5 is 4232x3744, and as we decrease resolution the pixels are doubled. Assuming the data coordinates mark bin centers (to explain the offset of the initial x).
 
 Now we just need to figure out z-axis. The z values in the image data go from 2917-4156, which is a range of 1239. So it seems that the z-values in the data correspond to the z-values in the image data, other than a translation of 2917. Some python functions were written to get the image for a given bin and return it as a numpy array; additionally the code can grab the overlaid synapse annotation (the python module can be seen here: [**``../code/image_scraping_jay.py``**](../code/image_scraping_jay.py) ).
 
