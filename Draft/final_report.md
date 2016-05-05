@@ -202,6 +202,10 @@ Now we can also view the overlaid synapse markings for this bin:
 
 <img src="../figs/max_synapse_overlay.png" width = "400px">
 
+Another interesting thing we can visualize is the unmasked value across an entire xy-plane of data. The following image visualizes this as follows: the 'brightness' of a bin is determined by its unmasked value, that is, bins with very low unmasked will be dark (if 0, completely black) while bins with maximal unmasked values will be unaffected. This gives us a very broad, general idea of what types of areas the masking algorithm tends to affect the most.
+
+<img src="../figs/unmasked_xyplane.png" width = "600px">
+
 ### Other findings
 
 ### Conclusion
