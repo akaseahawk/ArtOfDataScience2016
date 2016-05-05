@@ -229,7 +229,17 @@ We observe that the masking algorithm tends to be most active around the border 
 
 ### Methods
 
-# LINKS TO RELEVANT NOTEBOOKS HERE
+Code and mathematical theory for all questions is provided in detail for each analysis in the following notebooks.
+
+| Question Type | Code |
+|---------------|------|
+| Descriptive | [**``../code/descriptive_exploratory_answers.ipynb``**](../code/descriptive_exploratory_answers.ipynb) |
+| Exploratory | [**``../code/descriptive_exploratory_answers.ipynb``**](../code/descriptive_exploratory_answers.ipynb) |
+| Inferential | [**``../code/inferential_simulation.ipynb``**](../code/inferential_simulation.ipynb) |
+| Predictive  | [**``../code/regression_simulation.ipynb``**](../code/regression_simulation.ipynb) |
+| Testing Assumptions | [**``../code/test_assumptions.ipynb``**](../code/test_assumptions.ipynb) |
+
+### ADD LINKS TO RELEVANT NOTEBOOKS FOR EACH SECTION TO THIS TABLE
 
 #### Descriptive Analysis
 
