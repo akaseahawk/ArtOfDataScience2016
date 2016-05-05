@@ -181,6 +181,9 @@ This is strong evidence for the regions between local minima across the y-coordi
 
 There are no obvious or interesting trends along x or z in the above figures. 
 
+> <center><img src="../figs/akash_relaive_freq_density_within_cluster.png"<center>
+> <center><small><b><br>Figure #.</b>The distribution within 2 clusters fit the same distributional shape of the entire data set, while the other two are skewed. However, the final cluster has a disproportionate amount of zero values, likely due to the data not being . </small><center>
+
 We investigated whether the synapse distribution within these possible cortical layers is uniform. In the figures below, we see that the BIC curve defines the optimal number of clusters for synapses within these layers to be greater than one, meaning that synapses are not distributed uniformly throughout the layers.
 
 
