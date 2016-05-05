@@ -229,6 +229,8 @@ We observe that the masking algorithm tends to be most active around the border 
 
 ### Methods
 
+# LINKS TO RELEVANT NOTEBOOKS HERE
+
 #### Descriptive Analysis
 
 Here we were looking for numbers and figures that summarize our dataset well. We looked at total number of synapses, made a histogram of synaptic density, calculated correlation between unmasked and synapses, and made a 3D-scatterplot of the data, in order to gain some intuitive sense of how our data looks in Euclidean space. We could have additionally done these computations accross each z-slice, instead of just for the entire data set, as this might have given us some value information on how the data varies across slices.
