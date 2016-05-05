@@ -238,6 +238,7 @@ Code and mathematical theory for all questions is provided in detail for each an
 | Inferential | [**``../code/inferential_simulation.ipynb``**](../code/inferential_simulation.ipynb) |
 | Predictive  | [**``../code/regression_simulation.ipynb``**](../code/regression_simulation.ipynb) |
 | Testing Assumptions | [**``../code/test_assumptions.ipynb``**](../code/test_assumptions.ipynb) |
+| Imaging Data | [**``../code/image_analysis.ipynb``**](../code/image_analysis.ipynb) |
 
 ### ADD LINKS TO RELEVANT NOTEBOOKS FOR EACH SECTION TO THIS TABLE
 
@@ -295,7 +296,8 @@ Methods here
 
 ##### Imaging our Data
 
-Methods here
+As mentioned previously, an isomorphism between the coordinates in the data set and coordinates in the viz.neurodata tool were determined through inspection. It was found that coordinates line up such that the datasets coordinates correspond to the centers of bins with height and width 39 and depth of 111 at resolution 5 on the visualizer (this resolution only impacts the xy-plane). See the corresponding ipython notebook for further details. Additionally, source code for pulling image data for a specific bin from the web and converting into a numpy array can be seen in this python module: [**``../code/image_scraping_jay.py``**](../code/image_scraping_jay.py)
+
 
 ### Conclusion
  The patterns we saw in synapse density across our volume are significant. Our evidence for the cortical layers in y-direction is confirmed by the Bock 2011 paper: "After finding the calcium-imaged region of the cortex...each section was...tall enough (350 μm) to include cortical layers 1, 2/3 and upper 4" (Bock et al)<sup id="r-dbock">[1](f-dbock)</sup>. The analysis we performed to come to the conclusion of the direction of cortical "depth" is a step toward understanding how synapse connectivity is related to cortical layers. The analysis is a strong foundation for further exploration into structural synapse patterns within the cortex. These patterns may be strong indicators of the overall patterns in the neural structure of the cortex.
