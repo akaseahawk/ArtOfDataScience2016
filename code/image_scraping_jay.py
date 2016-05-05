@@ -13,6 +13,7 @@ def bin_to_nparray(cx, cy, cz=55, res=1, overlay=False):
     params:
         cx, cy, cz - bin coordinates (from syn-density csv)
         res - resolution to get the image at
+        overlay - set true to get overlay instead of original image
     returns:
         a numpy array of grayscale values for each pixel in the bin
         specified along the xy-plane, at slice specified by cz...
@@ -73,6 +74,8 @@ def tile_xy_to_nparray(x, y, res, z=55, overlay=False):
     image = io.imread(imgurl)
     return image
 
+# OLD FUNCTIONS
+############################
 
 xPix = 135424
 yPix = 119808
