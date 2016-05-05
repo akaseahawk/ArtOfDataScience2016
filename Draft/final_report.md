@@ -236,9 +236,19 @@ Here we used a Chi-Squared test to determine if the probabiity density per bin w
 
 Here we try to predict synaptic density given spatial coordinates. We ran Linear Regression, Support Vector Regression (SVR), K-Nearest Neighbor Regression (KNN), Random Forest Regression, and Polynomial Regression, all with fairly arbitrary and/or default sklearn parameters.To show that these regressions should infact be fairly effective on our data, we ran them on simulated data similar to ours, and then plotted the coefficient of determination (we used 10-fold cross-validation to determine the std-dev). 
 
-<img src="../figs for progress report/regression.png"  width="400" />
+<img src="../figs for progress report/regression.png"  width="700" />
 
 We then found better hyperparameters for the two most sucessful algorithms. Initially for KNN, the number of neighbors was set to 10. We plotted R^2 values computed via 10-fold cross validation across different values for the number of neighbors parameter in order to determine an optimal value:
+
+<img src="../figs/knn_params.png" />
+
+From this analysis we determined an optimal number of neighbors was 30, as opposed to the initial 10. 
+
+For random forest, a similar analysis was done for the max depth hyperparameter:
+
+<img src="../figs/rf_params.png" />
+
+Leading us to conclude the optimal max depth was 10, and not 5 as it was initially. 
 
 ### Conclusion
  The patterns we saw in synapse density across our volume are significant. Our evidence for the cortical layers in y-direction is confirmed by the Bock 2011 paper: "After finding the calcium-imaged region of the cortex...each section was...tall enough (350 μm) to include cortical layers 1, 2/3 and upper 4" (Bock et al)<sup id="r-dbock">[1](f-dbock)</sup>. The analysis we performed to come to the conclusion of the direction of cortical "depth" is a step toward understanding how synapse connectivity is related to cortical layers. The analysis is a strong foundation for further exploration into structural synapse patterns within the cortex. These patterns may be strong indicators of the overall patterns in the neural structure of the cortex.
