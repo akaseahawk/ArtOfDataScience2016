@@ -194,6 +194,14 @@ Inspecting the JS/html more we see that the actual number of pixels at resolutio
 
 Now we just need to figure out z-axis. The z values in the image data go from 2917-4156, which is a range of 1239. So it seems that the z-values in the data correspond to the z-values in the image data, other than a translation of 2917. Some python functions were written to get the image for a given bin and return it as a numpy array; additionally the code can grab the overlaid synapse annotation (the python module can be seen here: [**``../code/image_scraping_jay.py``**](../code/image_scraping_jay.py) ).
 
+Using these image functions, we can explore some of qualitative features of our data set. For example, we can look at what the bin with maximal synapses looks like (note that this is only one "z-slice" of that bin, since each bin actually contains 111 slices):
+
+<img src="../figs/max_synapses.png" width = "400px">
+
+Now we can also view the overlaid synapse markings for this bin:
+
+<img src="../figs/max_synapse_overlay.png" width = "400px">
+
 ### Other findings
 
 ### Conclusion
