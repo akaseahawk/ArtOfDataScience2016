@@ -145,15 +145,15 @@ We use k-means clusetering on the data, scaling the densities up so that they ha
 |3| 0 | 0.0006 |
 |4| 0.0011 | 0.0014 |
 
-Next, we used four Poissons to model the data based on the results of the clustering above. The table below compares statistical characteristics of the true data to the simulated Poisson data.
+Next, we used four Poissons to model synapse count in the data based on the results of the clustering above. For each cluster, average synapses was determined and then these were used as lambda values for a Poisson distribution with one distribution per cluster. The table below compares statistical characteristics of the true data to the simulated Poisson data.
 
 |------| Mean | Median | Standard Deviation |
 |--------------|------|--------|--------------------|
 |True Data|  | 163 | 174 | 69 |
 |Simulated Data| 163 | 178 | 64 |
 
-The mean, median and standard deviatio of the simulated data are close to that of the true data. To decide whether the model was an accurate representation of the true data, we compared the models using a K-S test.
-A low p-value of 1.7e-73for the Poisson model indicates that the model is a poor representation of the true distribution.
+The mean, median and standard deviatio of the simulated data are close to that of the true data. To decide whether the model was an accurate representation of the true data, we determined goodness of fit the models using a Chi-Squared test.
+A low p-value of approximately 0 for the Poisson model indicates that the model is a poor representation of the true distribution. This is likely due to the relatively high within-cluster variance in densities. 
 
 #### Orienting Ourselves
 The margins of our data were cut out per suggestion of the instructor. The sample is "rough around the edges" due to either the physical sample being imaged having rough edges or as an artifact of the processing the raw data went through to get the downsampled synaptic density data we are analyzing. One we excluded the margins from the data, we analyzed our data to determine the orientation of the volume in the 3D cortical space. We do this through analyzing trends in synaptic density in which we find evidence for cortical layers in the y-direction. From the Bock paper, we see that the imaged region of the cortex included cortial layers 1, 2/3, and upper 4. This, along with our evidence for y-layers indicates that the y-layer of highest density is likely part of cortical layer 1 (the cortical layer with the highest cell density and thus highest synaptic density). Moving from layer 1 of the cortex (the highest density region of our data) to deeper layers along the y-axis is thus the same as moving deeper into the cortex.
@@ -190,7 +190,7 @@ We investigated whether the synapse distribution within these possible cortical 
 #### ^^^ TODO: Better to use chi-squared test to demonstrate non-uniformity than the BIC curve
 
 
-### Imaging our Data
+#### Imaging our Data
 
 It seems that the coordinates in our data set line up with the viz.neurodata coordinates at resolution 5. To demonstrate why this seems likely to be true, markers have been placed at (0, 0), (4192, 0), (0, 3358), (4192, 3358)--i.e. corners of the boundary--and an image of these markers at resolution 8 is shown below.
 
@@ -215,6 +215,30 @@ Another interesting thing we can visualize is the unmasked value across an entir
 We observe that the masking algorithm tends to be most active around the border and around things that appear to be cell bodies or possibly mitochondria. Regardless, we can see that the masking algorithm is working as expected, since it makes sense to disregard things like cell bodies or mitochondria when looking for synapses.
 
 ### Other findings
+
+### Methods
+
+#### Descriptive Analysis
+
+Here we were looking for numbers and figures that summarize our dataset well. We looked at total number of synapses, made a histogram of synaptic density, calculated correlation between unmasked and synapses, and made a 3D-scatterplot of the data, in order to gain some intuitive sense of how our data looks in Euclidean space. We could have additionally done these computations accross each z-slice, instead of just for the entire data set, as this might have given us some value information on how the data varies across slices.
+
+#### Exploratory Analysis
+
+One thing we investigated here was how the data was clustered. We ran the k-means algorithm for several different values of k and then plotted the data, coloring it based on clusters. This gave us some intuitive sense of how the data could/should be clustered, although we did not examine what the optimal number of clusters might've been (although we did do this later). We also looked at the min and max values for the positions, and also where the maximum number of synapses occured. Another interesting thing that we could have done was to look at where this maximum number occurs for each z-slice and then we could see how this position changes across z-slices.
+
+#### Inferential Analysis
+
+Here we used a Chi-Squared test to determine if the probabiity density per bin was uniform. To do this we compared synapse counts with expected synapse counts. Expected synapse count for each bin was computed by multiplying that bins unmasked with the average density across the entire data set. To prove that a Chi-Squared test should work in this case, we simulated data under the null and alternate and plotted power as samples increased.
+
+<img src="../figs for progress report/power.png" data-canonical-src="../figs for progress report/power.png" width="400" />
+
+#### Predictive Analysis
+
+Here we try to predict synaptic density given spatial coordinates. We ran Linear Regression, Support Vector Regression (SVR), K-Nearest Neighbor Regression (KNN), Random Forest Regression, and Polynomial Regression, all with fairly arbitrary and/or default sklearn parameters.To show that these regressions should infact be fairly effective on our data, we ran them on simulated data similar to ours, and then plotted the coefficient of determination (we used 10-fold cross-validation to determine the std-dev). 
+
+<img src="../figs for progress report/regression.png"  width="400" />
+
+We then found better hyperparameters for the two most sucessful algorithms. Initially for KNN, the number of neighbors was set to 10. We plotted R^2 values computed via 10-fold cross validation across different values for the number of neighbors parameter in order to determine an optimal value:
 
 ### Conclusion
  The patterns we saw in synapse density across our volume are significant. Our evidence for the cortical layers in y-direction is confirmed by the Bock 2011 paper: "After finding the calcium-imaged region of the cortex...each section was...tall enough (350 μm) to include cortical layers 1, 2/3 and upper 4" (Bock et al)<sup id="r-dbock">[1](f-dbock)</sup>. The analysis we performed to come to the conclusion of the direction of cortical "depth" is a step toward understanding how synapse connectivity is related to cortical layers. The analysis is a strong foundation for further exploration into structural synapse patterns within the cortex. These patterns may be strong indicators of the overall patterns in the neural structure of the cortex.
