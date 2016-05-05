@@ -204,7 +204,9 @@ Now we can also view the overlaid synapse markings for this bin:
 
 Another interesting thing we can visualize is the unmasked value across an entire xy-plane of data. The following image visualizes this as follows: the 'brightness' of a bin is determined by its unmasked value, that is, bins with very low unmasked will be dark (if 0, completely black) while bins with maximal unmasked values will be unaffected. This gives us a very broad, general idea of what types of areas the masking algorithm tends to affect the most.
 
-<img src="../figs/unmasked_xyplane.png" width = "600px">
+<img src="../figs/unmasked_xyplane.png" width = "800px">
+
+We observe that the masking algorithm tends to be most active around the border and around things that appear to be cell bodies or possibly mitochondria. Regardless, we can see that the masking algorithm is working as expected, since it makes sense to disregard things like cell bodies or mitochondria when looking for synapses.
 
 ### Other findings
 
