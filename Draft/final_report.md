@@ -248,7 +248,31 @@ For random forest, a similar analysis was done for the max depth hyperparameter:
 
 <img src="../figs/rf_params.png" />
 
-Leading us to conclude the optimal max depth was 10, and not 5 as it was initially. 
+Leading us to conclude the optimal max depth was 10, and not 5 as it was initially.
+
+#### Testing Assumptions
+
+To test independence, we looked at the sample covariance matrix. This means we were just looking at linear independence. So while we said that by looking at the sample covariance matrix, we were concluding that the data was independent, we actually are only determining that it is not linearly independent. That being said, lack of linear independence is still a strong indicator of an overall lack of independence.
+
+To test identical distributions, we ran a GMM for different numbers of clusters and then plotted the BIC (Bayesian Information Criterion) for each. We looked for an elbow in the plot of BIC against # of clusters to determine the optimal one. This turned out to be 4. Interestingly, there is also a high spike at 11 clusters, but we attribute this to the fact that there are 11 z-slices.
+
+#### Extended Exploratory Analysis
+
+##### Building a Model
+
+Methods here
+
+##### Orienting Ourselves
+
+Methods here
+
+##### Trends in Synaptic Density
+
+Methods here
+
+##### Imaging our Data
+
+Methods here
 
 ### Conclusion
  The patterns we saw in synapse density across our volume are significant. Our evidence for the cortical layers in y-direction is confirmed by the Bock 2011 paper: "After finding the calcium-imaged region of the cortex...each section was...tall enough (350 μm) to include cortical layers 1, 2/3 and upper 4" (Bock et al)<sup id="r-dbock">[1](f-dbock)</sup>. The analysis we performed to come to the conclusion of the direction of cortical "depth" is a step toward understanding how synapse connectivity is related to cortical layers. The analysis is a strong foundation for further exploration into structural synapse patterns within the cortex. These patterns may be strong indicators of the overall patterns in the neural structure of the cortex.
