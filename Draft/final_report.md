@@ -260,7 +260,7 @@ Here we used a Chi-Squared test to determine if the probabiity density per bin w
 
 Here we try to predict synaptic density given spatial coordinates. We ran Linear Regression, Support Vector Regression (SVR), K-Nearest Neighbor Regression (KNN), Random Forest Regression, and Polynomial Regression, all with fairly arbitrary and/or default sklearn parameters.To show that these regressions should infact be fairly effective on our data, we ran them on simulated data similar to ours, and then plotted the coefficient of determination (we used 10-fold cross-validation to determine the std-dev). 
 
-<img src="../figs for progress report/regression.png"  width="700" />
+<img src="../figs/sim_regression.png"  width="700" />
 
 We then found better hyperparameters for the two most sucessful algorithms. Initially for KNN, the number of neighbors was set to 10. We plotted R^2 values computed via 10-fold cross validation across different values for the number of neighbors parameter in order to determine an optimal value:
 
