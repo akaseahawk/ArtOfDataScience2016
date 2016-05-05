@@ -167,7 +167,7 @@ The mean, median and standard deviatio of the simulated data are close to that o
 A low p-value of approximately 0 for the Poisson model indicates that the model is a poor representation of the true distribution. This is likely due to the relatively high within-cluster variance in densities. 
 
 #### Orienting Ourselves
-The margins of our data were cut out per suggestion of the instructor. The sample is "rough around the edges" due to either the physical sample being imaged having rough edges or as an artifact of the processing the raw data went through to get the downsampled synaptic density data we are analyzing. One we excluded the margins from the data, we analyzed our data to determine the orientation of the volume in the 3D cortical space. We do this through analyzing trends in synaptic density in which we find evidence for cortical layers in the y-direction. From the Bock paper, we see that the imaged region of the cortex included cortial layers 1, 2/3, and upper 4. This, along with our evidence for y-layers indicates that the y-layer of highest density is likely part of cortical layer 1 (the cortical layer with the highest cell density and thus highest synaptic density). Moving from layer 1 of the cortex (the highest density region of our data) to deeper layers along the y-axis is thus the same as moving deeper into the cortex.
+The margins of our data were cut out per suggestion of the instructor. The sample is "rough around the edges" due to either the physical sample being imaged having rough edges or as an artifact of the processing the raw data went through to get the downsampled synaptic density data we are analyzing. One we excluded the margins from the data, we analyzed our data to determine the orientation of the volume in the 3D cortical space. We do this through analyzing trends in synaptic density in which we found evidence for cortical layers in the y-direction. From the Bock paper, we see that the imaged region of the cortex included cortial layers 1, 2/3, and upper 4. This, along with our evidence for y-layers indicates that the y-layer of highest density is likely part of cortical layer 1 (the cortical layer with the highest cell density and thus highest synaptic density). Moving from layer 1 of the cortex (the highest density region of our data) to deeper layers along the y-axis is thus the same as moving deeper into the cortex.
 
 > <center><img src="../figs/synapse_overlay - Copy.PNG" data-canonical-src="../figs/synapse_overlay.PNG" width="800" height="500" /><center>
 > <center><small><b><br>Figure #.</b>
@@ -195,11 +195,6 @@ There are no obvious or interesting trends along x or z in the above figures.
 
 > <center><img src="../figs/akash_relaive_freq_density_within_cluster.png"<center>
 > <center><small><b><br>Figure #.</b>The distribution within 2 clusters fit the same distributional shape of the entire data set, while the other two are skewed. However, the final cluster has a disproportionate amount of zero values, likely due to the data not being . </small><center>
-
-We investigated whether the synapse distribution within these possible cortical layers is uniform. In the figures below, we see that the BIC curve defines the optimal number of clusters for synapses within these layers to be greater than one, meaning that synapses are not distributed uniformly throughout the layers.
-
-#### ^^^ TODO: Better to use chi-squared test to demonstrate non-uniformity than the BIC curve
-
 
 #### Imaging our Data
 
@@ -284,15 +279,15 @@ To test identical distributions, we ran a GMM for different numbers of clusters 
 
 ##### Building a Model
 
-Methods here
+Methods here (jay)
 
 ##### Orienting Ourselves
 
-Methods here
+To clean our data, we simply looked at the image of the dataset and cut off the margins where the data did not look consistent. Comparing our analysis for synaptic density patterns to the information in the Bock paper referenced in the overview, we confirmed that we were able to see some of the cortical layers. To determine which direction moves deeper into the cortex, we referenced general knowledge of the cortex. Namely, that the first cortical layer has the highest cell density and that as you move deeper into the cortex, the cell density decreases. With this information, we concluded that cortical "depth" moves downward along the y-axis.
 
 ##### Trends in Synaptic Density
 
-Methods here
+The first evidence of cortical layers we saw was from looking at the average synaptic density along each axis. The average synaptic density of each 2D plane along one axis was computed and the x, y, and z coordinates were standardized to zero for the sake of comparison. It was found that there was a wavelike trend along the y-axis. We further explored by doing the same computation but with total synapses instead of synaptic density. This is because total number of cell bodies is relevant in distinguishing between cortical layers. Again, the wavelike pattern was noticeable. Both analyses showed four distinct layers along the y-direction. We then obtained a clearer picture of the boundaries between the layers we saw. The finite difference of synaptic density across the y-direction was calculated, and we were able to see the changes in synaptic density representative of moving between the layer boundaries. Finally, we performed GMM clustering on the data for four clusters. The hyperparameter for GMM (four) was determined by the elbow of a BIC curve score for clustering. The clusters with the minimum and maximum mean were plotted. The highest and lowest density clusters occupied the ends of the data set (filling the X-z planes at the uppermost and lowermost y-boundaries). This is what we expected to see. Between the ends, there is a gradient of high-low density. Moving from one end of the y-axis to the other (highest density to lowest density), there is a diffusion of the points in the high density cluster as you move closer to the low density cluster.
 
 ##### Imaging our Data
 
