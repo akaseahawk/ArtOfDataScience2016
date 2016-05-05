@@ -92,27 +92,27 @@ We can use statistical inference techniques to determine whether or not synaptic
 This plot further demonstrates the result obtained from the Chi-Squared test: synaptic density is non-uniform.
 
 #### Predictive Analysis
-Now that a relationship between synapses and the unmasked value has been observed, we can attempt to solidify
-the relationship between synapses and the unmasked value. Several types of regressions were trained and tested using 10-fold cross-validation,
-and their results are tabulated below.
+Now we can explore the relationship between spatial coordinates and synaptic density. We do this by running several regression algorithms, with spatial coordinates as the regressor, and density as the regressand. Regression algorithms, initially given somewhat arbitrary and/or default values for hyperparameters, were trained and tested using 10-fold cross-validation. Results are tabulated below:
 
-| Regression | Accuracy | Standard Deviation |
+| Regression | R^2 | Standard Error |
 |------------|----------|--------------------|
-|K-Nearest Neighbors| 0.25 | +/- 2.54 |
-|Linear SVR| 0.57 | +/- 0.18 |
-|Linear| 0.62 | +/- 0.40 |
-|Random Forest| 0.79 | +/- 0.51 |
-|Polynomial Regression| 0.85 | +/- 0.27 |
+|K-Nearest Neighbors| 0.20 | +/- 0.08 |
+|Linear SVR| -0.49 | +/- 1.36 |
+|Linear Regression | 0.12 | +/- 0.16 |
+|Random Forest| 0.21 | +/- 0.13 |
+|Polynomial Regression| 0.18 | +/- 0.17 |
 
-The regression accuracy on our data based on the five tested regression algorithms is, at best,
-85%, and, at worst, 18%. From the poor results of the K-nearest neighbors and linear SVR regressions,
-We see that the relationship between the variables (x,y,z,synapses) and the unmasked value is most likely
-not linear due to the poorer performance of the linear regression compared to the very well-performing
-polynomial regression. We believe K-nearest neighbors failed to the
-high dimensionality of our data. Distances become less representative of the data with increasing
-dimensionaltiy. Next, we plan to investigate why the polynomial regression and random forest regression performed relatively well and review our
-assumptions for accuracy and completeness as well as adjust our regression algorithm parameters
-to better represent the true data as well as the adjusted assumptions. To gain more understanding of why
+R^2 value per regression is, at best,
+0.21, and, at worst, -0.49. From the poor results of standard linear and linear support vector regression,
+we see that the relationship between spatial location and density is most likely
+non-linear. Observe that the most sucessful regression algorithms were Random Forest and KNN regressions. To investigate these further, optimal hyperparameters were estimated, and then the algorithms were re-ran using said parameters (see methods for further info). Results tabulated below:
+
+| Regression | R^2 | Standard Error |
+|------------|----------|--------------------|
+|K-Nearest Neighbors| 0.24 | +/- 0.08 |
+|Random Forest| 0.28 | +/- 0.09 |
+
+While we do note some improvement, in both R^2 and error, it appears that ultimately these regressions were still unsucessful. To gain more understanding of why
 the regression algorithms performed the way they did, we reevaluated our procedure thus far and tested our assumptions.
 This is explained further in the Testing Assumptions and Next Steps sections.
 
