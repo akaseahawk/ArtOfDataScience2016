@@ -232,8 +232,6 @@ Code and mathematical theory for all questions is provided in detail for each an
 | Building Model | [**``../code/data_modeling.ipynb``**](../code/data_modeling.ipynb) |
 | Imaging Data | [**``../code/image_analysis.ipynb``**](../code/image_analysis.ipynb) |
 
-### ADD LINKS TO RELEVANT NOTEBOOKS FOR EACH SECTION TO THIS TABLE
-
 #### Descriptive Analysis
 
 Here we were looking for numbers and figures that summarize our dataset well. We looked at total number of synapses, made a histogram of synaptic density, calculated correlation between unmasked and synapses, and made a 3D-scatterplot of the data, in order to gain some intuitive sense of how our data looks in Euclidean space. We could have additionally done these computations accross each z-slice, instead of just for the entire data set, as this might have given us some value information on how the data varies across slices.
