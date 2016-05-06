@@ -191,9 +191,6 @@ This is strong evidence for the regions between local minima across the y-coordi
 
 There are no obvious or interesting trends along x or z in the above figures.
 
-> <center><img src="figs/akash_relaive_freq_density_within_cluster.png"<center>
-> <center><small><b><br></b>The distribution within 2 clusters fit the same distributional shape of the entire data set, while the other two are skewed. However, the final cluster has a disproportionate amount of zero values, likely due to the data not being . </small><center>
-
 #### Imaging our Data
 
 It seems that the coordinates in our data set line up with the viz.neurodata coordinates at resolution 5. To demonstrate why this seems likely to be true, markers have been placed at (0, 0), (4192, 0), (0, 3358), (4192, 3358)--i.e. corners of the boundary--and an image of these markers at resolution 8 is shown below.
