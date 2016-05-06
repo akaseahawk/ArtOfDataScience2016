@@ -230,6 +230,7 @@ Code and mathematical theory for all questions is provided in detail for each an
 | Predictive  | [**``../code/regression_simulation.ipynb``**](../code/regression_simulation.ipynb) |
 | Testing Assumptions | [**``../code/test_assumptions.ipynb``**](../code/test_assumptions.ipynb) |
 | Building Model | [**``../code/data_modeling.ipynb``**](../code/data_modeling.ipynb) |
+| Trends in Synaptic Density| [**``syn_density_trends.ipynb``**](../code/syn_density_trends.ipynb)
 | Imaging Data | [**``../code/image_analysis.ipynb``**](../code/image_analysis.ipynb) |
 
 #### Descriptive Analysis
