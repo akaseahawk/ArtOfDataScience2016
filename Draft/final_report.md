@@ -74,9 +74,7 @@ thus we produced a scatter plot of the data to get a general idea of how the syn
 Knowing what the unmasked value is, we could remove invalid data entries where unmasked values were zero. With the remaining data, we sought to gain a general understanding of how the synapses are structured in the sample. Thus we asked how the data could be clustered and which metrics should be used to cluster the synapses. We used k-means, varying k-values. In terms of which metrics to be using, since we're dealing with objects in 3D space, Euclidean distance is the obvious choice. These results are displayed below.
 
 > <center><img src="../figs for progress report/kmeans_cluster.png" data-canonical-src="../figs for progress report/kmeans_clusters.png" width="400" height="300" /><center>
-> <center><small><b><br></b>Scatter plot of k-means clusters, colored according to cluster.</small><center>
 > <center><img src="../figs for progress report/kmeans_centers.png" data-canonical-src="../figs for progress report/kmeans_centers.png" width="400" height="300" />
-> <small><b><br></b>K-means clusters centers.</small><center>
 
 We ran k-means clustering with 4, 5, and 10 clusters and found that 4 clusters looked the most well organized and naturally structured
 out of those options. Our main goal in running the k-means clustering algorithm at this point was to see if there is any sense of
