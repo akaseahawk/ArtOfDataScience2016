@@ -23,7 +23,7 @@
     - [Orienting Ourselves](./final_report.md#orienting-ourselves-1)
     - [Trends in Synaptic Density](./final_report.md#trends-in-synaptic-density-1)
     - [Imaging our Data](./final_report.md#imaging-our-data-1)
-- [Other Findings](./final_report.md#other-findings)
+- [Next Steps](./final_report.md#next-steps)
 - [Conclusion](./final_report.md#conclusion)
 
 ----------
@@ -220,8 +220,6 @@ Another interesting thing we can visualize is the unmasked value across an entir
 
 We observe that the masking algorithm tends to be most active around the border and around things that appear to be cell bodies or possibly mitochondria. Regardless, we can see that the masking algorithm is working as expected, since it makes sense to disregard things like cell bodies or mitochondria when looking for synapses.
 
-### Other findings
-
 ### Methods
 
 Code and mathematical theory for all questions is provided in detail for each analysis in the following notebooks.
@@ -306,6 +304,9 @@ The first evidence of cortical layers we saw was from looking at the average syn
 
 As mentioned previously, an isomorphism between the coordinates in the data set and coordinates in the viz.neurodata tool were determined through inspection. It was found that coordinates line up such that the datasets coordinates correspond to the centers of bins with height and width 39 and depth of 111 at resolution 5 on the visualizer (this resolution only impacts the xy-plane). See the corresponding ipython notebook for further details. Additionally, source code for pulling image data for a specific bin from the web and converting into a numpy array can be seen in this python module: [**``../code/image_scraping_jay.py``**](../code/image_scraping_jay.py)
 
+
+### Next Steps
+Given more time, we would like to research models for spatial data (e.g. "Point Processes", and more specifically, the "Poisson Point Process”), and then try to apply methods from this area of statistics in order to generate a more successful model. With a model, we could obtain the data set at a full resolution allowing us to view our data at a lower level (i.e. not binned/downsample). This would allow us to analyze synaptic patterns and compare to patterns we have found in the simplified data set as well as known structures in the cortex. (i.e. what the Bock (2011) paper calls synaptic connections). The synapse coloring overlay that goes along with our dataset may color synapses according to some characteristic. We would like to see if the coloring is meaningful (or just for making the image data more readable), and, if it is meaningful, we would want to try to charachterize the distribution of synapses per color. The Bock (2011) paper mentions being able to distinguish between excitatory and inhibitory within our data set. This would give us a way to tie our analysis of the structure of the brain sample (with respect to synapses) to functionality. Tying in structure to functionality would be a long-term goal.
 
 ### Conclusion
  The patterns we saw in synapse density across our volume are significant. Our evidence for the cortical layers in y-direction is confirmed by the Bock 2011 paper: "After finding the calcium-imaged region of the cortex...each section was...tall enough (350 μm) to include cortical layers 1, 2/3 and upper 4" (Bock et al)<sup id="r-dbock">[1](f-dbock)</sup>. The analysis we performed to come to the conclusion of the direction of cortical "depth" is a step toward understanding how synapse connectivity is related to cortical layers. The analysis is a strong foundation for further exploration into structural synapse patterns within the cortex. These patterns may be strong indicators of the overall patterns in the neural structure of the cortex.
