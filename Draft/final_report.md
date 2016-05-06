@@ -97,7 +97,7 @@ To gain a better understanding of the limits of our dataset, we asked about the 
 We can use statistical inference techniques to determine whether or not synaptic density is uniform throughout the 3D volume in the data. We will run a Chi-Squared test to determine whether or not to reject the null hypothesis that synaptic density is uniform throughout the volume. The Chi-Squared test will compare the number of synapses per bin in the data given, to the expected number of synapses under the null hypothesis. The expected number of synapses can be calculated by first computing the average synaptic density (synapses/unmasked for each row) and then multiplying unmasked by this average density value for every row. The Chi-Squared test returned a p-value of approximately 0, meaning that we can reject the null. I.e. synaptic density is *not* uniform throughout the volume.
 
 > <center><img src="../figs/hist_syndens.png" data-canonical-src="../figs/hist_syndens.png" width="600" height="400" /><center>
-> <center><small><b><br>.</b>The histogram of synaptic density clearly shows a non-uniform distribution of synapses in our sample. We see that medium-density areas are more common than low or high density.</small><center>
+> <center><small><b><br></b>The histogram of synaptic density clearly shows a non-uniform distribution of synapses in our sample. We see that medium-density areas are more common than low or high density.</small><center>
 This plot further demonstrates the result obtained from the Chi-Squared test: synaptic density is non-uniform.
 
 #### Predictive Analysis
@@ -168,7 +168,7 @@ A low p-value of approximately 0 for the Poisson model indicates that the model 
 The margins of our data were cut out per suggestion of the instructor. The sample is "rough around the edges" due to either the physical sample being imaged having rough edges or as an artifact of the processing the raw data went through to get the downsampled synaptic density data we are analyzing. One we excluded the margins from the data, we analyzed our data to determine the orientation of the volume in the 3D cortical space. We do this through analyzing trends in synaptic density in which we found evidence for cortical layers in the y-direction. From the Bock paper, we see that the imaged region of the cortex included cortial layers 1, 2/3, and upper 4. This, along with our evidence for y-layers indicates that the y-layer of highest density is likely part of cortical layer 1 (the cortical layer with the highest cell density and thus highest synaptic density). Moving from layer 1 of the cortex (the highest density region of our data) to deeper layers along the y-axis is thus the same as moving deeper into the cortex.
 
 > <center><img src="../figs/synapse_overlay - Copy.PNG" data-canonical-src="../figs/synapse_overlay.PNG" width="800" height="500" /><center>
-> <center><small><b><br>.</b>
+> <center><small><b><br></b>
 From http://viz.neurodata.io/project/bock11/#, we overlaid the 'mp4merged' synapse data over our dataset.
 Y from top to bottom. X from left to right. We see increasing synaptic density as y increases. We see a band of high density
 at the top which we beleive to be a portion of layer of of the cortex defined above the red line. </small><center>
@@ -179,7 +179,7 @@ We see evident signs of cortical layering in the y-direction defined by density 
 > <center><small><b><br></b>We are plotting the mean the x-z plane at each y coordinate value. We see local maxima that are steadily decreasing as y increases.The local minima define boundary points between cortical layers. With these definitions, we see 4 layers present. </small><center>
 
 > <center><img src="../figs/total_dens_xyz.png" data-canonical-src="../figs/total_dens_xyz.pngg" width="900" height="250" /><center>
-> <center><small><b><br>.</b>Similar to the figure above, we are plotting the total number of synapses in every x-z plane for a specific y-value. We see the same wave pattern across y indicating cortical layers with cortical depth increasing with increasing y.</small><center>
+> <center><small><b><br></b>Similar to the figure above, we are plotting the total number of synapses in every x-z plane for a specific y-value. We see the same wave pattern across y indicating cortical layers with cortical depth increasing with increasing y.</small><center>
 
 > <center><img src="../figs/deriv_across_y.png" data-canonical-src="../figs/deriv_across_y.png" width="600" height="400" /><center>
 > <center><small><b><br>.</b>The magnitude of the changes in synaptic density across y are evident. The changes in synaptic density represent moving from one layer to the next across y. The first 4 "spikes" or "hills" are the most well-defined and represent the 4 cortical layers we believe to be present in our volume. </small><center>
