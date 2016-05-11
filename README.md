@@ -16,7 +16,7 @@
 - *Assignment 6*: [``./code/test_assumptions.ipynb``](./code/test_assumptions.ipynb)
    > In the previous two assignments, we made assumptions about our data. Now, we will check them and see whether or not they are true, and if not, update our understanding or assumptions about our data to those which are *more* right.
 
-- *Assignment 7*: [``presentation.pdf``](presentation.pdf)
+- *Assignment 7*: [``./draft/presentation.pdf``](./draft/presentation.pdf)
   > Presentation about findings and methods used throughout the project. 
 
 - *Assignment 8*: [``./Draft/progress_report.md``](./Draft/progress_report.md)
