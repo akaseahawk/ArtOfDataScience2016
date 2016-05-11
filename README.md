@@ -1,5 +1,5 @@
 - *Assignment 1*: [``./Draft/summary.md``](./Draft/summary.md)
-  > Significan and Feasibility analysis of our proposed project topic. 
+  > Significance and Feasibility analysis of our proposed project topic. 
 
 - *Assignment 2*: [``./Draft/questions.md``](./Draft/questions.md)
   > Asking the 6 types of scientific questions about our project topic
