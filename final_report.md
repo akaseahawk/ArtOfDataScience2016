@@ -73,8 +73,8 @@ thus we produced a scatter plot of the data to get a general idea of how the syn
 #### Exploratory Analysis
 Knowing what the unmasked value is, we could remove invalid data entries where unmasked values were zero. With the remaining data, we sought to gain a general understanding of how the synapses are structured in the sample. Thus we asked how the data could be clustered and which metrics should be used to cluster the synapses. We used k-means, varying k-values. In terms of which metrics to be using, since we're dealing with objects in 3D space, Euclidean distance is the obvious choice. These results are displayed below.
 
-> <center><img src="figs for progress report/kmeans_cluster.png" data-canonical-src="../figs for progress report/kmeans_clusters.png" width="400" height="300" /><center>
-> <center><img src="figs for progress report/kmeans_centers.png" data-canonical-src="../figs for progress report/kmeans_centers.png" width="400" height="300" />
+> <center><img src="figs/figs for progress report/kmeans_cluster.png" data-canonical-src="../figs/figs for progress report/kmeans_clusters.png" width="400" height="300" /><center>
+> <center><img src="figs/figs for progress report/kmeans_centers.png" data-canonical-src="../figs/figs for progress report/kmeans_centers.png" width="400" height="300" />
 
 We ran k-means clustering with 4, 5, and 10 clusters and found that 4 clusters looked the most well organized and naturally structured
 out of those options. Our main goal in running the k-means clustering algorithm at this point was to see if there is any sense of
@@ -130,14 +130,14 @@ The prior analyses all made the assumptions that our data was i.i.d (identically
 
 First we will look at the identical assumption. As mentioned previously, in our exploratory analyses, we did notice some clustering, so it was likely that the data was infact not identically distributed. We more formally investigate this now. We did GMM clustering on the data, and plotted the BIC against the number of clusters.
 
-> <center><img src="figs for progress report/clusters_bic.png" data-canonical-src="../figs for progress report/clusters_bic.png" width="400" height="400" /><center>
+> <center><img src="figs/figs for progress report/clusters_bic.png" data-canonical-src="../figs/figs for progress report/clusters_bic.png" width="400" height="400" /><center>
 > <center><small><b><br></b>We notice an elbow at 4 clusters, so we conclude that this is a good suggestion for the optimal number of clusters.</small><center>
 
 Thus we concluded that our assumption of identical distributions was false. Also note the spike at 11 clusters: we hypothesize that this is due to the fact that there are 11 possible z-values.
 
 Now we will investigate the independence assumption. To do this we can look at the sample-covariance matrix of our data. Since our data set was so big, doing this for all the data at once is infeasible. Instead we randomly sample from the data many times, taking the sample covariance for each of these random samples. Then we finally average these covariance matrices (element-wise).
 
-> <center><img src="figs for progress report/covariance_matrix.png" data-canonical-src="../figs for progress report/covariance_matrix.png" width="400" height="400" /><center>
+> <center><img src="figs/figs for progress report/covariance_matrix.png" data-canonical-src="../figs/figs for progress report/covariance_matrix.png" width="400" height="400" /><center>
 <center><small><b><br></b>Sample covariance matrix for an average of many random samples of our data. Covariance is highly concentrated along the diagonal. </small><center>
 
 Here we see that the covariance was highly concentrated along the diagonal, indicating that the data was in fact independently distributed.
@@ -242,7 +242,7 @@ One thing we investigated here was how the data was clustered. We ran the k-mean
 
 Here we used a Chi-Squared test to determine if the probabiity density per bin was uniform. To do this we compared synapse counts with expected synapse counts. Expected synapse count for each bin was computed by multiplying that bins unmasked with the average density across the entire data set. To prove that a Chi-Squared test should work in this case, we simulated data under the null and alternate and plotted power as samples increased.
 
-<img src="figs for progress report/power.png" data-canonical-src="../figs for progress report/power.png" width="400" />
+<img src="figs/figs for progress report/power.png" data-canonical-src="../figs/figs for progress report/power.png" width="400" />
 
 #### Predictive Analysis
 
