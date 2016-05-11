@@ -1,3 +1,14 @@
+# Team1's Repo
+This repository is the repository for Team Fat Boys in Art of Data Science.
+
+## Contact
+Emily Marshall, Jay Miller, Akash Ray, Bijan Varjavand
+
+github handles: emarsh12, jaym910, akaseahawk, howdosheeplamp
+emails: emarsh12@hu.edu, jmill220@jhu.edu, ARay@hu.edu, bvarjav1@jhu.edu
+
+## Table of Contents
+
 - *Assignment 1*: [``./draft/summary.md``](./draft/summary.md)
   > Significance and Feasibility analysis of our proposed project topic. 
 
