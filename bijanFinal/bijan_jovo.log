@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.3.7)  20 MAY 2016 14:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.3.7)  20 MAY 2016 16:38
 entering extended mode
 **./bijan_jovo.tex
 (bijan_jovo.tex
@@ -685,54 +685,68 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
  [1
 
 {C:/Users/Bijan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-<Fig2a.pdf, id=107, 433.62pt x 289.08pt>
+<Fig1.pdf, id=107, 433.62pt x 289.08pt>
+File: Fig1.pdf Graphic file (type pdf)
+ <use Fig1.pdf>
+Package pdftex.def Info: Fig1.pdf used on input line 59.
+(pdftex.def)             Requested size: 130.087pt x 86.72466pt.
+
+<Fig2a.pdf, id=108, 433.62pt x 289.08pt>
 File: Fig2a.pdf Graphic file (type pdf)
  <use Fig2a.pdf>
-Package pdftex.def Info: Fig2a.pdf used on input line 69.
+Package pdftex.def Info: Fig2a.pdf used on input line 67.
 (pdftex.def)             Requested size: 130.087pt x 86.72466pt.
 
-<Fig2b.pdf, id=108, 433.62pt x 289.08pt>
+<Fig2b.pdf, id=109, 433.62pt x 289.08pt>
 File: Fig2b.pdf Graphic file (type pdf)
  <use Fig2b.pdf>
-Package pdftex.def Info: Fig2b.pdf used on input line 70.
+Package pdftex.def Info: Fig2b.pdf used on input line 68.
 (pdftex.def)             Requested size: 130.087pt x 86.72466pt.
 
-<Fig2c.pdf, id=109, 433.62pt x 289.08pt>
+<Fig2c.pdf, id=110, 433.62pt x 289.08pt>
 File: Fig2c.pdf Graphic file (type pdf)
  <use Fig2c.pdf>
-Package pdftex.def Info: Fig2c.pdf used on input line 71.
+Package pdftex.def Info: Fig2c.pdf used on input line 69.
 (pdftex.def)             Requested size: 130.087pt x 86.72466pt.
 
-<Fig10.pdf, id=110, 505.89pt x 505.89pt>
+<Fig10.pdf, id=111, 505.89pt x 505.89pt>
 File: Fig10.pdf Graphic file (type pdf)
  <use Fig10.pdf>
-Package pdftex.def Info: Fig10.pdf used on input line 79.
+Package pdftex.def Info: Fig10.pdf used on input line 77.
 (pdftex.def)             Requested size: 151.76816pt x 151.76816pt.
 
-<Fig12.pdf, id=111, 505.89pt x 505.89pt>
+<Fig12.pdf, id=112, 505.89pt x 505.89pt>
 File: Fig12.pdf Graphic file (type pdf)
  <use Fig12.pdf>
-Package pdftex.def Info: Fig12.pdf used on input line 80.
+Package pdftex.def Info: Fig12.pdf used on input line 78.
 (pdftex.def)             Requested size: 151.76816pt x 151.76816pt.
 
-<Fig13a.pdf, id=112, 722.7pt x 505.89pt>
+<Fig13a.pdf, id=113, 722.7pt x 505.89pt>
 File: Fig13a.pdf Graphic file (type pdf)
  <use Fig13a.pdf>
-Package pdftex.def Info: Fig13a.pdf used on input line 88.
+Package pdftex.def Info: Fig13a.pdf used on input line 86.
 (pdftex.def)             Requested size: 108.40031pt x 75.88022pt.
 
-<Fig13b.pdf, id=113, 722.7pt x 505.89pt>
+<Fig13b.pdf, id=114, 722.7pt x 505.89pt>
 File: Fig13b.pdf Graphic file (type pdf)
  <use Fig13b.pdf>
-Package pdftex.def Info: Fig13b.pdf used on input line 89.
+Package pdftex.def Info: Fig13b.pdf used on input line 87.
 (pdftex.def)             Requested size: 108.40031pt x 75.88022pt.
 
-<Fig13c.pdf, id=114, 722.7pt x 505.89pt>
+<Fig13c.pdf, id=115, 722.7pt x 505.89pt>
 File: Fig13c.pdf Graphic file (type pdf)
  <use Fig13c.pdf>
-Package pdftex.def Info: Fig13c.pdf used on input line 90.
+Package pdftex.def Info: Fig13c.pdf used on input line 88.
 (pdftex.def)             Requested size: 108.40031pt x 75.88022pt.
- [2 <./Fig2a.pdf> <./Fig2b.pdf
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[2 <./Fig1.pdf> <./Fig2a.pdf
+
+pdfTeX warning: pdflatex (file ./Fig2a.pdf): PDF inclusion: multiple pdfs with 
+page group included in a single page
+> <./Fig2b.pdf
 
 pdfTeX warning: pdflatex (file ./Fig2b.pdf): PDF inclusion: multiple pdfs with 
 page group included in a single page
@@ -748,24 +762,28 @@ page group included in a single page
 
 pdfTeX warning: pdflatex (file ./Fig12.pdf): PDF inclusion: multiple pdfs with 
 page group included in a single page
->] <Fig5a.pdf, id=302, 433.62pt x 289.08pt>
+>] <Fig5a.pdf, id=331, 433.62pt x 289.08pt>
 File: Fig5a.pdf Graphic file (type pdf)
  <use Fig5a.pdf>
-Package pdftex.def Info: Fig5a.pdf used on input line 127.
+Package pdftex.def Info: Fig5a.pdf used on input line 125.
 (pdftex.def)             Requested size: 130.087pt x 86.72466pt.
 
-<Fig5b.pdf, id=303, 433.62pt x 289.08pt>
+<Fig5b.pdf, id=332, 433.62pt x 289.08pt>
 File: Fig5b.pdf Graphic file (type pdf)
  <use Fig5b.pdf>
-Package pdftex.def Info: Fig5b.pdf used on input line 128.
+Package pdftex.def Info: Fig5b.pdf used on input line 126.
 (pdftex.def)             Requested size: 130.087pt x 86.72466pt.
 
-<Fig5c.pdf, id=304, 433.62pt x 289.08pt>
+<Fig5c.pdf, id=333, 433.62pt x 289.08pt>
 File: Fig5c.pdf Graphic file (type pdf)
  <use Fig5c.pdf>
-Package pdftex.def Info: Fig5c.pdf used on input line 129.
+Package pdftex.def Info: Fig5c.pdf used on input line 127.
 (pdftex.def)             Requested size: 130.087pt x 86.72466pt.
- [3 <./Fig13a.pdf> <./Fig13b.pdf
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[3 <./Fig13a.pdf> <./Fig13b.pdf
 
 pdfTeX warning: pdflatex (file ./Fig13b.pdf): PDF inclusion: multiple pdfs with
  page group included in a single page
@@ -773,7 +791,12 @@ pdfTeX warning: pdflatex (file ./Fig13b.pdf): PDF inclusion: multiple pdfs with
 
 pdfTeX warning: pdflatex (file ./Fig13c.pdf): PDF inclusion: multiple pdfs with
  page group included in a single page
->] [4 <./Fig5a.pdf> <./Fig5b.pdf
+>]
+File: Fig1.pdf Graphic file (type pdf)
+ <use Fig1.pdf>
+Package pdftex.def Info: Fig1.pdf used on input line 145.
+(pdftex.def)             Requested size: 130.087pt x 86.72466pt.
+ [4 <./Fig5a.pdf> <./Fig5b.pdf
 
 pdfTeX warning: pdflatex (file ./Fig5b.pdf): PDF inclusion: multiple pdfs with 
 page group included in a single page
@@ -781,29 +804,43 @@ page group included in a single page
 
 pdfTeX warning: pdflatex (file ./Fig5c.pdf): PDF inclusion: multiple pdfs with 
 page group included in a single page
->] <Fig7a.pdf, id=466, 433.62pt x 289.08pt>
+>] <Fig7a.pdf, id=495, 433.62pt x 289.08pt>
 File: Fig7a.pdf Graphic file (type pdf)
  <use Fig7a.pdf>
-Package pdftex.def Info: Fig7a.pdf used on input line 171.
+Package pdftex.def Info: Fig7a.pdf used on input line 167.
 (pdftex.def)             Requested size: 130.087pt x 86.72466pt.
 
-<Fig7b.pdf, id=467, 433.62pt x 289.08pt>
+<Fig7b.pdf, id=496, 433.62pt x 289.08pt>
 File: Fig7b.pdf Graphic file (type pdf)
  <use Fig7b.pdf>
-Package pdftex.def Info: Fig7b.pdf used on input line 172.
+Package pdftex.def Info: Fig7b.pdf used on input line 168.
 (pdftex.def)             Requested size: 130.087pt x 86.72466pt.
 
-<Fig8a.pdf, id=468, 433.62pt x 289.08pt>
+<Fig8a.pdf, id=497, 433.62pt x 289.08pt>
 File: Fig8a.pdf Graphic file (type pdf)
  <use Fig8a.pdf>
-Package pdftex.def Info: Fig8a.pdf used on input line 180.
+Package pdftex.def Info: Fig8a.pdf used on input line 176.
 (pdftex.def)             Requested size: 130.087pt x 86.72466pt.
 
-<Fig8b.pdf, id=469, 433.62pt x 289.08pt>
+<Fig8b.pdf, id=498, 433.62pt x 289.08pt>
 File: Fig8b.pdf Graphic file (type pdf)
  <use Fig8b.pdf>
-Package pdftex.def Info: Fig8b.pdf used on input line 181.
+Package pdftex.def Info: Fig8b.pdf used on input line 177.
 (pdftex.def)             Requested size: 130.087pt x 86.72466pt.
+
+<Fig9.pdf, id=499, 433.62pt x 289.08pt>
+File: Fig9.pdf Graphic file (type pdf)
+ <use Fig9.pdf>
+Package pdftex.def Info: Fig9.pdf used on input line 198.
+(pdftex.def)             Requested size: 130.087pt x 86.72466pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: Fig10.pdf Graphic file (type pdf)
+<use Fig10.pdf>
+Package pdftex.def Info: Fig10.pdf used on input line 210.
+(pdftex.def)             Requested size: 151.76816pt x 151.76816pt.
  [5 <./Fig7a.pdf> <./Fig7b.pdf
 
 pdfTeX warning: pdflatex (file ./Fig7b.pdf): PDF inclusion: multiple pdfs with 
@@ -816,20 +853,10 @@ page group included in a single page
 
 pdfTeX warning: pdflatex (file ./Fig8b.pdf): PDF inclusion: multiple pdfs with 
 page group included in a single page
->] <Fig9.pdf, id=613, 433.62pt x 289.08pt>
-File: Fig9.pdf Graphic file (type pdf)
- <use Fig9.pdf>
-Package pdftex.def Info: Fig9.pdf used on input line 202.
-(pdftex.def)             Requested size: 130.087pt x 86.72466pt.
-File: Fig10.pdf Graphic file (type pdf)
- <use Fig10.pdf>
-Package pdftex.def Info: Fig10.pdf used on input line 214.
-(pdftex.def)             Requested size: 151.76816pt x 151.76816pt.
-
-<Fig11.pdf, id=614, 505.89pt x 505.89pt>
+>] <Fig11.pdf, id=643, 505.89pt x 505.89pt>
 File: Fig11.pdf Graphic file (type pdf)
  <use Fig11.pdf>
-Package pdftex.def Info: Fig11.pdf used on input line 224.
+Package pdftex.def Info: Fig11.pdf used on input line 220.
 (pdftex.def)             Requested size: 151.76816pt x 151.76816pt.
 
 
@@ -837,62 +864,63 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: Fig12.pdf Graphic file (type pdf)
 <use Fig12.pdf>
-Package pdftex.def Info: Fig12.pdf used on input line 238.
+Package pdftex.def Info: Fig12.pdf used on input line 234.
 (pdftex.def)             Requested size: 151.76816pt x 151.76816pt.
 
-Underfull \vbox (badness 5245) has occurred while \output is active []
 
- [6 <./Fig9.pdf>]
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 File: Fig13a.pdf Graphic file (type pdf)
- <use Fig13a.pdf>
-Package pdftex.def Info: Fig13a.pdf used on input line 248.
+<use Fig13a.pdf>
+Package pdftex.def Info: Fig13a.pdf used on input line 244.
 (pdftex.def)             Requested size: 108.40031pt x 75.88022pt.
 File: Fig13b.pdf Graphic file (type pdf)
  <use Fig13b.pdf>
-Package pdftex.def Info: Fig13b.pdf used on input line 249.
+Package pdftex.def Info: Fig13b.pdf used on input line 245.
 (pdftex.def)             Requested size: 108.40031pt x 75.88022pt.
 File: Fig13c.pdf Graphic file (type pdf)
  <use Fig13c.pdf>
-Package pdftex.def Info: Fig13c.pdf used on input line 250.
+Package pdftex.def Info: Fig13c.pdf used on input line 246.
 (pdftex.def)             Requested size: 108.40031pt x 75.88022pt.
- [7 <./Fig11.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 294.
 
-Underfull \vbox (badness 2359) has occurred while \output is active []
 
- [8]
-[9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 294.
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[6 <./Fig9.pdf>] [7 <./Fig11.pdf>] [8]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 364.
+ [9]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 364.
  (bijan_jovo.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 294.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 294.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 364.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 364.
 Package rerunfilecheck Info: File `bijan_jovo.out' has not changed.
 (rerunfilecheck)             Checksum: 0C3FC3E4E270C062E067D2F492E21910;1624.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 294.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 364.
  ) 
 Here is how much of TeX's memory you used:
- 8355 strings out of 493634
- 127784 string characters out of 3135240
- 242768 words of memory out of 3000000
- 11413 multiletter control sequences out of 15000+200000
- 33766 words of font info for 138 fonts, out of 3000000 for 9000
+ 8380 strings out of 493634
+ 128141 string characters out of 3135240
+ 246691 words of memory out of 3000000
+ 11433 multiletter control sequences out of 15000+200000
+ 37280 words of font info for 146 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 31i,8n,38p,864b,346s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Bijan/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/fontname/8r
-.enc} <C:\Users\Bijan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi6
-00\ectt1000.pk><C:/Users/Bijan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmmi10.pfb><C:/Users/Bijan/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Bijan/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Bijan/AppData/Loc
-al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Bijan/
-AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:
-/Users/Bijan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb
-><C:/Users/Bijan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a
-.pfb><C:/Users/Bijan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/ut
-mri8a.pfb>
-Output written on bijan_jovo.pdf (9 pages, 8809972 bytes).
+ 31i,8n,38p,864b,356s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Bijan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi450\
+ectt0800.pk>{C:/Users/Bijan/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/f
+ontname/8r.enc} <C:\Users\Bijan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknapp
+en\ec\dpi600\ectt1000.pk><C:/Users/Bijan/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Bijan/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Bijan/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Bijan/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Us
+ers/Bijan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb><C:/Users/Bijan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/
+utmb8a.pfb><C:/Users/Bijan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/ti
+mes/utmr8a.pfb><C:/Users/Bijan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/ur
+w/times/utmri8a.pfb>
+Output written on bijan_jovo.pdf (9 pages, 8838515 bytes).
 PDF statistics:
- 792 PDF objects out of 1000 (max. 8388607)
+ 884 PDF objects out of 1000 (max. 8388607)
  47 named destinations out of 1000 (max. 500000)
- 18710 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 20251 words of extra memory for PDF output out of 20736 (max. 10000000)
 

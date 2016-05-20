@@ -52,13 +52,11 @@ I took the approach of a data scientist, utilizing previous data refinement, ask
 
 \section{Results}
 
-The analytic investigation in the data revealed some interesting features and  trends. First, a manual counting was done to evaluate the synapse counting algorithm. This was assisted by the information in Burette et al.(2015). The first notable conclusion was the slight skew on the data from the algorithm used to count synapses. A manual comparison showed that many synapses failed to be detected across the entire range of the data set. The skew seemed to be affected by changes in x, y, and z values as seen below.
+The analytic investigation in the data revealed some interesting features and  trends. First, a manual counting was done to evaluate the synapse counting algorithm. This was assisted by the information in Burette et al.(2015). The first notable conclusion was the slight skew on the data from the algorithm used to count synapses. A manual comparison showed that many synapses failed to be detected across the entire range of the data set. The skew seemed to be affected by changes in y values as seen below.
 
 \begin{figure}[h]
   \centering
-  \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
-  \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
-  \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
+  \includegraphics[scale=.3]{Fig1}
   \caption{Left: change across x. Center: change across y. Right: change across z.}
 \end{figure}
 
@@ -140,13 +138,11 @@ The images that the data is based off of was also subject to scrutiny. Additiona
 
 To begin with, a relationship between the data set and the analysis platform on \url{http://viz.neurodata.io/bock11/} was made. Based off of the x, y, and z ranges, it was determined that the data points matched with a magnification value of 5. Additionally, the z value was offset by 2917. Utilizing this information, one can find a rough estimate of a specific voxel indicated in the data set in the image.
 
-Counting was done on the source images by hand, in order to confirm validity and accuracy of the synapse counting algorithm. The manual counting has inaccuracies as well, but it is unbiased and thus the errors will cancel each other out. The manual counts were performed at similar values of x, y, and z and then averaged. These data points were then collected across x, y, and z.
+Counting was done on the source images by hand, in order to confirm validity and accuracy of the synapse counting algorithm. The manual counting has inaccuracies as well, but it is unbiased and thus the errors will cancel each other out. The manual counts were performed at similar values of x, y, and z and then averaged. These data points were then collected across y.
 
 \begin{figure}[h]
   \centering
-  \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
-  \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
-  \fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
+  \includegraphics[scale=.3]{Fig1}
   \caption{Manual counts - data. Left: across x. Center: across y. Right: across z.}
 \end{figure}
 
@@ -289,6 +285,80 @@ Nucleus of the Cat}. J of Comparatice Neurology article.
 
 \section{Figures}
 
-[1] Figure: \url{hoho.haha.shrapnel}, Code: \url{you got peeped!}
+[1, 6] Figure:
+{\tiny \url{https://github.com/Upward-Spiral-Science/team1/tree/master/bijanFinal/Fig1.pdf}}
+
+[1, 6] Code:
+{\tiny \url{https://github.com/Upward-Spiral-Science/team1/tree/master/bijanFinal/Figure1.ipynb}}
+
+{\tiny \url{https://github.com/Upward-Spiral-Science/team1/tree/master/bijanFinal/Figure1imaging.ipynb}}
+
+[2] Figure:
+{\tiny \url{https://github.com/Upward-Spiral-Science/team1/tree/master/bijanFinal/Fig2a.pdf}}
+
+{\tiny \url{https://github.com/Upward-Spiral-Science/team1/tree/master/bijanFinal/Fig2b.pdf}}
+
+{\tiny \url{https://github.com/Upward-Spiral-Science/team1/tree/master/bijanFinal/Fig2c.pdf}}
+
+[2] Code:
+{\tiny \url{https://github.com/Upward-Spiral-Science/team1/tree/master/bijanFinal/Figure2.ipynb}}
+
+[3, 10, 12] Figure:
+{\tiny \url{https://github.com/Upward-Spiral-Science/team1/tree/master/bijanFinal/Fig10.pdf}}
+
+{\tiny \url{https://github.com/Upward-Spiral-Science/team1/tree/master/bijanFinal/Fig12.pdf}}
+
+[3, 10, 12] Code:
+{\tiny \url{https://github.com/Upward-Spiral-Science/team1/tree/master/bijanFinal/Figure10.ipynb}}
+
+{\tiny \url{https://github.com/Upward-Spiral-Science/team1/tree/master/bijanFinal/Figure12.ipynb}}
+
+[4, 13] Figure:
+{\tiny \url{https://github.com/Upward-Spiral-Science/team1/tree/master/bijanFinal/Fig13a.pdf}}
+
+{\tiny \url{https://github.com/Upward-Spiral-Science/team1/tree/master/bijanFinal/Fig13b.pdf}}
+
+{\tiny \url{https://github.com/Upward-Spiral-Science/team1/tree/master/bijanFinal/Fig13c.pdf}}
+
+[4, 13] Code:
+{\tiny \url{https://github.com/Upward-Spiral-Science/team1/tree/master/bijanFinal/Figure13.ipynb}}
+
+[5] Figure:
+{\tiny \url{https://github.com/Upward-Spiral-Science/team1/tree/master/bijanFinal/Fig5a.pdf}}
+
+{\tiny \url{https://github.com/Upward-Spiral-Science/team1/tree/master/bijanFinal/Fig5b.pdf}}
+
+{\tiny \url{https://github.com/Upward-Spiral-Science/team1/tree/master/bijanFinal/Fig5c.pdf}}
+
+[5] Code:
+{\tiny \url{https://github.com/Upward-Spiral-Science/team1/tree/master/bijanFinal/Figure5.ipynb}}
+
+[7] Figure:
+{\tiny \url{https://github.com/Upward-Spiral-Science/team1/tree/master/bijanFinal/Fig7a.pdf}}
+
+{\tiny \url{https://github.com/Upward-Spiral-Science/team1/tree/master/bijanFinal/Fig7b.pdf}}
+
+[7] Code:
+{\tiny \url{https://github.com/Upward-Spiral-Science/team1/tree/master/bijanFinal/Figure7.ipynb}}
+
+[8] Figure:
+{\tiny \url{https://github.com/Upward-Spiral-Science/team1/tree/master/bijanFinal/Fig8a.pdf}}
+
+{\tiny \url{https://github.com/Upward-Spiral-Science/team1/tree/master/bijanFinal/Fig8b.pdf}}
+
+[8] Code:
+{\tiny \url{https://github.com/Upward-Spiral-Science/team1/tree/master/bijanFinal/Figure8.ipynb}}
+
+[9] Figure:
+{\tiny \url{https://github.com/Upward-Spiral-Science/team1/tree/master/bijanFinal/Fig9.pdf}}
+
+[9] Code:
+{\tiny \url{https://github.com/Upward-Spiral-Science/team1/tree/master/bijanFinal/Figure9.ipynb}}
+
+[11] Figure:
+{\tiny \url{https://github.com/Upward-Spiral-Science/team1/tree/master/bijanFinal/Fig11.pdf}}
+
+[11] Code:
+{\tiny \url{https://github.com/Upward-Spiral-Science/team1/tree/master/bijanFinal/Figure11.ipynb}}
 
 \end{document}
